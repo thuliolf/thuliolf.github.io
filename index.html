@@ -86,6 +86,8 @@ p{margin:0 0 14px}
 .project:last-child{border-bottom:1px solid var(--rule)}
 .project p{margin:8px 0 10px;max-width:64ch}
 .stack{font-size:14px;color:var(--muted);margin:0 0 10px}
+.project .client{font-size:15px;color:var(--muted);margin:2px 0 0}
+.intro{color:var(--muted);margin:0 0 16px}
 .links{display:flex;gap:20px;flex-wrap:wrap;font-weight:600;font-size:15px}
 
 .timeline{list-style:none;margin:0;padding:0}
@@ -146,8 +148,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <p>Trabalho perto das equipes de controladoria e financeiro, do diagnóstico ao script que corrige a base. Fui líder técnico na própria Sankhya e, antes disso, passei seis anos como analista de sistemas na indústria, ligando processos de produção, fiscal e financeiro.</p>
     </section>
 
+    <section id="sankhya" aria-labelledby="h-sankhya">
+      <h2 id="h-sankhya">Trabalhos no ERP Sankhya</h2>
+      <p class="intro">Alguns trabalhos recentes feitos para clientes. O código pertence a eles, por isso aqui vai só a descrição.</p>
+
+      <article class="project">
+        <h3>Faturamento automático de NFS-e a partir de contratos</h3>
+        <p class="client">Empresa de terceirização de serviços</p>
+        <p>Botões de ação que geram e confirmam as notas de serviço direto dos contratos, em duas versões: item a item ou a nota inteira com todos os itens pendentes. O financeiro sai junto com a confirmação, sem retrabalho do faturamento.</p>
+        <p class="stack">JavaScript (Rhino), API Java do Sankhya, NFS-e</p>
+      </article>
+
+      <article class="project">
+        <h3>DANFSE personalizado</h3>
+        <p class="client">Empresa de terceirização de serviços</p>
+        <p>Relatório da nota fiscal de serviço eletrônica que lê os dados direto do XML autorizado da nota, em vez de remontá-los por consultas. Inclui os tributos da reforma (IBS e CBS) e corrige município, CNAE e item da lista de serviços.</p>
+        <p class="stack">iReport / JasperReports, XPath, SQL</p>
+      </article>
+
+      <article class="project">
+        <h3>Importação de NFS-e emitidas fora do ERP</h3>
+        <p class="client">Empresa do setor de serviços</p>
+        <p>Script em etapas que leu cerca de 300 XMLs de NFS-e emitidas externamente e preencheu número, chave, status e ISS nas notas pendentes do Sankhya. Pode ser executado de novo sem duplicar dados, e as notas ambíguas ficaram separadas para conferência manual.</p>
+        <p class="stack">Oracle SQL e PL/SQL, XML</p>
+      </article>
+    </section>
+
     <section id="projetos" aria-labelledby="h-projetos">
-      <h2 id="h-projetos">Projetos</h2>
+      <h2 id="h-projetos">Projetos no GitHub</h2>
 
       <article class="project">
         <h3>Boilerplate de integração Sankhya</h3>
