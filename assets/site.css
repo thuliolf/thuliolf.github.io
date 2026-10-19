@@ -230,3 +230,11 @@ table.calc tr.total td{border-bottom:0;border-top:2px solid var(--graphite);font
 
 @media (max-width:520px){.quick{grid-template-columns:repeat(2,max-content)}}
 .timeline ul.points li{padding:0}
+
+/* WhatsApp */
+.btn-wa svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:30;width:60px;height:60px;border-radius:50%;background:var(--cyan);color:var(--graphite);display:grid;place-items:center;box-shadow:0 10px 24px rgba(39,35,36,.28);transition:transform .15s ease}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){.wa-float{transition:none}}
+.contact .sub+.mail{display:inline-block;margin-top:2px}
