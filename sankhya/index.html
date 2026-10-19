@@ -3,100 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Customizações Sankhya | Thúlio Leitão</title>
-<meta name="description" content="Portfólio de customizações no ERP Sankhya: rotinas fiscais, aprovações, painéis de gestão e relatórios automáticos, construídos como extensão do ERP.">
+<title>Trabalhos no ERP Sankhya | Thúlio Leitão</title>
+<meta name="description" content="Entregas no ERP Sankhya: faturamento de contratos, DRE gerencial, custos de importação, rotinas fiscais, painéis financeiros e controles de aprovação.">
 <link rel="canonical" href="https://thulio.com.br/sankhya/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --desk:#E9ECEA;
-  --paper:#FCFCFA;
-  --bar:#DDEBDF;
-  --hole:#C8D2CA;
-  --ink:#1C2733;
-  --muted:#5A6672;
-  --link:#245C46;
-  --rule:#D5DBD7;
-  --mark:#8A5A12;
-  --mark-soft:#F3EAD8;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
-a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-
-.page{max-width:1120px;margin:0 auto;background:var(--paper);min-height:100vh}
-.wrap{padding:0 32px}
-
-/* Cabeçalho */
-.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 32px;border-bottom:1px dashed var(--hole);font-family:var(--mono);font-size:14px;color:var(--muted)}
-.top a{color:var(--muted)}
-header.intro{padding:48px 32px 32px;border-bottom:1px solid var(--rule)}
-.kicker{font-family:var(--mono);font-size:14px;color:var(--muted);margin:0}
-h1{font-stretch:80%;font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.02;letter-spacing:-.01em;margin:12px 0 16px;max-width:18ch;text-wrap:balance}
-.lede{color:var(--muted);max-width:64ch;margin:0;font-size:18px}
-.facts{display:flex;flex-wrap:wrap;gap:6px 28px;margin-top:24px;font-family:var(--mono);font-size:14px;color:var(--muted)}
-.facts b{color:var(--ink);font-weight:600}
-
-/* Filtro */
-.filters{display:flex;flex-wrap:wrap;gap:8px;padding:24px 32px 8px}
-.filters button{font:500 14px/1 var(--sans);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:9px 14px;cursor:pointer}
-.filters button:hover{border-color:var(--link)}
-.filters button[aria-pressed="true"]{background:var(--link);border-color:var(--link);color:var(--paper)}
-.filters .count{font-family:var(--mono);opacity:.7;margin-left:6px}
-
-/* Fichas */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px;padding:16px 32px 48px}
-.card{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.card.wide{grid-column:1/-1}
-.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.area{font-family:var(--mono);font-size:13px;color:var(--muted)}
-.status{font-family:var(--mono);font-size:12px;background:var(--mark-soft);color:var(--mark);padding:2px 8px;border-radius:3px;white-space:nowrap}
-.card h2{font-stretch:88%;font-weight:700;font-size:21px;line-height:1.2;margin:0;text-wrap:balance}
-.card p{margin:0}
-.label{display:block;font-size:13px;font-weight:600;color:var(--link);margin-bottom:2px}
-.card ul{margin:0;padding-left:18px;display:grid;gap:4px}
-.card li::marker{color:var(--link)}
-.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.stack span{font-family:var(--mono);font-size:12px;background:var(--bar);color:var(--ink);padding:3px 8px;border-radius:3px}
-code{font-family:var(--mono);font-size:.88em;background:var(--desk);border:1px solid var(--rule);padding:0 4px;border-radius:3px;overflow-wrap:anywhere}
-
-/* Fluxo de aprovação */
-.wide-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px}
-.wide-text{display:grid;gap:12px;min-width:0;align-content:start}
-@media (max-width:760px){.wide-body{grid-template-columns:1fr}}
-.card .flow{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.flow li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding-bottom:14px;position:relative}
-.flow li:not(:last-child)::before{content:"";position:absolute;left:13px;top:26px;bottom:0;width:2px;background:var(--rule)}
-.flow .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:500 12px/1 var(--mono);background:#fff;border:2px solid var(--link);color:var(--link);position:relative}
-.flow li.gate .n{background:var(--link);color:#fff}
-.flow strong{display:block;font-weight:600}
-.flow small{color:var(--muted);font-size:14px}
-
-/* Padrões */
-.patterns{border-top:1px solid var(--rule);padding:48px 32px 56px;background:var(--paper)}
-.patterns h2{font-stretch:85%;font-weight:700;font-size:28px;margin:0 0 24px}
-.plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px 32px;margin:0;padding:0;list-style:none}
-.plist li{border-top:2px solid var(--ink);padding-top:12px;min-width:0;background:var(--paper)}
-.plist strong{display:block;font-size:17px;margin-bottom:4px}
-.plist p{margin:0;color:var(--muted);font-size:15px}
-
-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px 32px 40px;border-top:1px dashed var(--hole);font-size:14px;color:var(--muted)}
-.empty{color:var(--muted);padding:0 32px 24px}
-
-@media (max-width:640px){
-  .wrap,.top,header.intro,.filters,.grid,.patterns,footer,.empty{padding-left:16px;padding-right:16px}
-  .lede{font-size:16px}
-}
-</style>
+<link rel="stylesheet" href="/sankhya/style.css">
 </head>
 <body>
 <div class="page">
@@ -107,179 +21,168 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
 </div>
 
 <header class="intro">
-  <p class="kicker">ERP Sankhya, Oracle, 2026</p>
-  <h1>Customizações para um grupo de várias empresas</h1>
-  <p class="lede">Uma seleção do que desenvolvi ao longo de um atendimento contínuo de consultoria: rotinas fiscais, controles de aprovação, painéis de gestão e relatórios automáticos. Tudo construído como extensão do ERP, sem alterar o sistema padrão. Nomes de clientes, pessoas e valores reais foram omitidos.</p>
+  <p class="kicker">ERP Sankhya, Oracle e SQL Server</p>
+  <h1>Trabalhos no ERP Sankhya</h1>
+  <p class="lede">Customizações entregues para quatro clientes de segmentos diferentes: terceirização de mão de obra, serviços profissionais, importação e distribuição e um grupo com várias empresas. Tudo construído como extensão do ERP, sem alterar o sistema padrão. Nomes de clientes, pessoas e valores foram omitidos.</p>
   <div class="facts">
-    <span><b>10</b> entregas</span>
-    <span><b>5</b> áreas de negócio</span>
-    <span>PL/SQL, componentes de BI, HTML5/JS, JasperReports</span>
+    <span><b>16</b> entregas</span>
+    <span><b>4</b> segmentos</span>
+    <span>PL/SQL, T-SQL, JavaScript, dashboards, JasperReports</span>
   </div>
 </header>
 
-<main>
+<section class="block" aria-labelledby="h-dest">
+  <h2 class="sec" id="h-dest">Destaques</h2>
+  <p class="sec-sub">Os três projetos de maior alcance.</p>
+  <div class="highlights">
+    <article class="hl">
+      <span class="seg">Terceirização de mão de obra</span>
+      <h3>Faturamento de contratos, da proposta à nota</h3>
+      <p>O preço de cada cargo é calculado na proposta, herdado pelo contrato, apurado todo mês a partir da folha e do ponto e transformado em pedidos e notas.</p>
+      <p><span class="label">Ganho</span>Faturamento mensal sem planilha, reprocessável sem duplicar e auditado num painel que mostra de onde vem cada valor.</p>
+      <a class="go" href="/sankhya/faturamento-contratos/">Ver o projeto</a>
+    </article>
+    <article class="hl">
+      <span class="seg">Serviços profissionais e comércio</span>
+      <h3>DRE gerencial dentro do ERP</h3>
+      <p>Demonstração de resultado com comparativo entre anos, projeção, regime de caixa ou competência e abertura de qualquer linha até o título de origem.</p>
+      <p><span class="label">Ganho</span>A controladoria deixou de montar o resultado fora do ERP, com números conciliados com o fiscal e a contabilidade.</p>
+      <a class="go" href="/sankhya/dre-gerencial/">Ver o projeto</a>
+    </article>
+    <article class="hl">
+      <span class="seg">Importação e distribuição</span>
+      <h3>Custo das notas complementares de importação</h3>
+      <p>A nota complementar de impostos de importação sai com quantidade zero, como exige a contabilidade, e uma nota-espelho gerencial leva o valor dos tributos para o custo médio.</p>
+      <p><span class="label">Ganho</span>Custo do produto correto sem mexer na regra fiscal, validado ponta a ponta e em produção, com manual para o usuário.</p>
+    </article>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-cat">
+  <h2 class="sec" id="h-cat">Outras entregas</h2>
+  <p class="sec-sub">Resumo do objetivo e do ganho de cada uma.</p>
   <nav class="filters" aria-label="Filtrar por área" id="filters"></nav>
 
-  <section class="grid" id="grid">
+  <div class="catalog" id="grid">
 
     <article class="card" data-area="Fiscal">
       <div class="card-head"><span class="area">Fiscal</span></div>
-      <h2>Guia única de impostos retidos</h2>
-      <p><span class="label">Problema</span>Cada nota de serviço gerava um título próprio de PIS, COFINS e CSLL retidos. No fim do mês, o financeiro conciliava dezenas de títulos pequenos contra um único DARF.</p>
-      <p><span class="label">Solução</span>Painel por competência e botão que gera um título único por período, espelhando o DARF 5952.</p>
-      <ul>
-        <li>Apuração direta na tabela de impostos da nota, somada por documento</li>
-        <li>Competência pelo mês do pagamento, agrupada pela raiz do CNPJ</li>
-        <li>Vencimento no fim do 2º decêndio do mês seguinte, antecipado se cair em dia não útil</li>
-        <li>Guias abaixo de R$ 10,00 acumulam para o mês seguinte</li>
-        <li>Tabela de vínculo impede a mesma nota em duas guias; títulos já emitidos pelo modelo antigo ficam fora</li>
-      </ul>
-      <div class="stack"><span>Procedure</span><span>Botão de ação</span><span>Dashboard 2 níveis</span><span>Tabela AD_</span></div>
+      <h3>Guia única de impostos retidos</h3>
+      <p><span class="label">Objetivo</span>Trocar os títulos de PIS, COFINS e CSLL retidos de cada nota por um único título por competência, espelhando o DARF.</p>
+      <p><span class="label">Ganho</span>A conciliação do mês passa de dezenas de títulos para um, com vencimento e acúmulo de valores pequenos calculados sozinhos.</p>
+      <div class="stack"><span>Procedure</span><span>Botão de ação</span><span>Dashboard</span></div>
+    </article>
+
+    <article class="card" data-area="Fiscal">
+      <div class="card-head"><span class="area">Fiscal</span></div>
+      <h3>Conciliação de NFS-e emitidas fora do ERP</h3>
+      <p><span class="label">Objetivo</span>Gravar número, chave, status e ISS de cerca de 300 NFS-e emitidas em sistema externo nas notas geradas pelo faturamento de contratos.</p>
+      <p><span class="label">Ganho</span>ERP igual ao que foi emitido, sem redigitação, por um script reexecutável com pré-checagem, backup e commit manual.</p>
+      <div class="stack"><span>PL/SQL</span><span>XML NFS-e</span></div>
+    </article>
+
+    <article class="card" data-area="Fiscal">
+      <div class="card-head"><span class="area">Fiscal</span><span class="status">em andamento</span></div>
+      <h3>DANFSE no padrão nacional</h3>
+      <p><span class="label">Objetivo</span>Documento impresso da NFS-e no novo leiaute nacional, lido direto do XML autorizado, com IBS e CBS e endereço completo do tomador.</p>
+      <p><span class="label">Ganho</span>Impressão fiel à nota autorizada, sem remontar os dados por consultas.</p>
+      <div class="stack"><span>JasperReports</span><span>XPath</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
       <div class="card-head"><span class="area">Financeiro</span></div>
-      <h2>Alerta de inadimplência por contrato</h2>
-      <p><span class="label">Problema</span>O bloqueio nativo de atraso olha o cliente inteiro. Um cliente com um contrato atrasado e outros em dia era barrado em todos.</p>
-      <p><span class="label">Solução</span>Complemento ao evento nativo: a solicitação de liberação passa a mostrar, contrato a contrato, quem está em dia e quem está inadimplente.</p>
-      <ul>
-        <li>Carência parametrizável (definida em 10 dias)</li>
-        <li>Tabela HTML na própria liberação com títulos, valor vencido e maior atraso por contrato</li>
-        <li>Link direto para um painel filtrado pelo contrato faturado</li>
-        <li>Painel com drill-down: contratos do cliente, depois títulos em aberto</li>
-      </ul>
-      <div class="stack"><span>Trigger</span><span>Procedure</span><span>Dashboard</span><span>HTML em PL/SQL</span></div>
+      <h3>Posição financeira e aging na data base</h3>
+      <p><span class="label">Objetivo</span>Mostrar os títulos em aberto em qualquer data escolhida, com receitas e despesas distribuídas em doze faixas de vencimento.</p>
+      <p><span class="label">Ganho</span>O financeiro sabe o que estava em aberto num dia passado sem depender de combinações de filtros nas telas nativas.</p>
+      <div class="stack"><span>Dashboard</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
       <div class="card-head"><span class="area">Financeiro</span></div>
-      <h2>Painel da carteira de contratos</h2>
-      <p><span class="label">Problema</span>A gestão não tinha uma visão consolidada da receita recorrente nem dos contratos que pediam atenção.</p>
-      <p><span class="label">Solução</span>Dashboard com uma faixa de indicadores calculada em uma única consulta e gráficos de concentração.</p>
-      <ul>
-        <li>Receita recorrente mensal, carteira total, saldo a receber e % realizado</li>
-        <li>Valor vencido e quantidade de contratos inadimplentes</li>
-        <li>Contratos vencendo em 90 dias e faturamento pendente</li>
-        <li>Receita recorrente por empresa e 10 maiores clientes por carteira</li>
-      </ul>
-      <div class="stack"><span>Dashboard</span><span>SQL analítico</span><span>Cards HTML</span></div>
+      <h3>Adiantamentos e reembolsos de colaboradores</h3>
+      <p><span class="label">Objetivo</span>Saldo e extrato de cada colaborador na data base, mais indicadores de reembolsos aprovados que ainda não foram pagos.</p>
+      <p><span class="label">Ganho</span>Saldo que bate com a tela do ERP e fim dos devedores falsos ao filtrar por centro de resultado.</p>
+      <div class="stack"><span>Dashboard</span><span>Cards</span><span>PL/SQL</span></div>
     </article>
 
-    <article class="card wide" data-area="Comercial">
-      <div class="card-head"><span class="area">Comercial, Controladoria e RH</span></div>
-      <h2>Aprovação de comissões em duas etapas</h2>
-      <div class="wide-body">
-        <div class="wide-text">
-          <p><span class="label">Problema</span>Pagamentos de comissão precisavam passar pela Controladoria e depois pelo RH, cada um avisado no momento certo e com a documentação de cálculo sempre junto.</p>
-          <p><span class="label">Solução</span>Uma regra de aprovação por etapa, cada uma presa a um documento diferente do fluxo. A ordem vem do próprio processo: o pedido só vira nota depois da primeira liberação.</p>
-          <ul>
-            <li>E-mail automático ao aprovador de cada etapa, com proteção contra envio duplicado</li>
-            <li>Anexos do pedido (planilha de cálculo, nota do representante) copiados para a nota de compra ao faturar</li>
-            <li>A cópia de anexos vale para qualquer pedido de compra que vira compra, não só comissões</li>
-          </ul>
-        </div>
-        <ol class="flow" aria-label="Etapas do fluxo">
-          <li><span class="n">1</span><div><strong>Pedido de comissão</strong><small>Lançado pelo comercial com a planilha de cálculo anexada</small></div></li>
-          <li class="gate"><span class="n">2</span><div><strong>Liberação da Controladoria</strong><small>Confirmação bloqueada até aprovar; aviso por e-mail</small></div></li>
-          <li><span class="n">3</span><div><strong>Faturamento para compra</strong><small>Trigger copia os anexos do pedido para a nota</small></div></li>
-          <li class="gate"><span class="n">4</span><div><strong>Liberação do RH</strong><small>Segunda aprovação, também com aviso</small></div></li>
-        </ol>
-      </div>
-      <div class="stack"><span>Regras de negócio</span><span>Procedures</span><span>Trigger</span><span>Fila de e-mail</span></div>
+    <article class="card" data-area="Financeiro">
+      <div class="card-head"><span class="area">Financeiro</span></div>
+      <h3>Carteira de contratos e inadimplência</h3>
+      <p><span class="label">Objetivo</span>Painel de receita recorrente, vencidos e contratos a vencer, e alerta de inadimplência contrato a contrato na liberação de faturamento.</p>
+      <p><span class="label">Ganho</span>Um contrato atrasado deixa de travar os outros contratos do mesmo cliente, e a gestão vê a carteira inteira numa tela.</p>
+      <div class="stack"><span>Trigger</span><span>Procedure</span><span>Dashboard</span></div>
     </article>
 
-    <article class="card" data-area="Comercial">
-      <div class="card-head"><span class="area">Comercial</span><span class="status">em desenvolvimento</span></div>
-      <h2>Tela de composição de comissões</h2>
-      <p><span class="label">Problema</span>O pedido de comissão trazia só o valor total, sem rastro das vendas que o justificavam.</p>
-      <p><span class="label">Solução</span>Tela master-detail que liga cada pagamento às notas e itens que o compõem.</p>
-      <ul>
-        <li>Situação calculada: pendente, iniciado ou concluído conforme a soma bate com o pedido</li>
-        <li>Seleção de vendas do representante, por padrão só as já pagas pelo cliente</li>
-        <li>Comissão antecipada sobre pedido de venda ainda não faturado</li>
-        <li>Partilha entre representantes e bloqueio de item comissionado duas vezes</li>
-        <li>Abertura dos anexos do pedido direto na linha</li>
-      </ul>
-      <div class="stack"><span>Componente HTML5</span><span>JavaScript</span><span>View AD_</span><span>Tabela AD_</span></div>
+    <article class="card" data-area="Financeiro">
+      <div class="card-head"><span class="area">Financeiro</span></div>
+      <h3>Adiantamento de cliente ligado ao pedido</h3>
+      <p><span class="label">Objetivo</span>Botão que gera o adiantamento e o título a receber a partir do pedido de venda.</p>
+      <p><span class="label">Ganho</span>Fim dos boletos de adiantamento montados à mão, com a contrapartida contábil criada automaticamente.</p>
+      <div class="stack"><span>Botão de ação JS</span><span>Regra de negócio</span></div>
     </article>
 
-    <article class="card" data-area="Suprimentos">
+    <article class="card" data-area="Financeiro">
+      <div class="card-head"><span class="area">Financeiro e contábil</span></div>
+      <h3>Auditoria da rotina de PCLD</h3>
+      <p><span class="label">Objetivo</span>Explicar as diferenças entre os painéis financeiro e contábil da provisão para devedores duvidosos, com engenharia reversa da rotina.</p>
+      <p><span class="label">Ganho</span>Cada divergência com causa identificada, correção proposta e o processo documentado para a contabilidade.</p>
+      <div class="stack"><span>Diagnóstico</span><span>PL/SQL</span></div>
+    </article>
+
+    <article class="card" data-area="Controles">
+      <div class="card-head"><span class="area">Comercial, controladoria e RH</span><span class="status">parte em desenvolvimento</span></div>
+      <h3>Comissões com aprovação em duas etapas</h3>
+      <p><span class="label">Objetivo</span>Pagamento de comissão aprovado pela Controladoria e depois pelo RH, com avisos e anexos de cálculo, e uma tela que liga cada pagamento às vendas que o compõem.</p>
+      <p><span class="label">Ganho</span>Comissão rastreável até a nota e trava contra o mesmo item comissionado duas vezes.</p>
+      <div class="stack"><span>Regras de negócio</span><span>Trigger</span><span>HTML5</span></div>
+    </article>
+
+    <article class="card" data-area="Controles">
       <div class="card-head"><span class="area">Suprimentos</span></div>
-      <h2>Controle de ajustes de estoque</h2>
-      <p><span class="label">Problema</span>Ajustes de estoque eram confirmados sem nenhuma conferência da Controladoria.</p>
-      <p><span class="label">Solução</span>Regra que exige liberação em todo tipo de operação de ajuste e avisa a Controladoria por e-mail.</p>
-      <ul>
-        <li>Cobertura definida na configuração da regra, sem lista fixa no código</li>
-        <li>E-mail gravado em transação própria para não se perder quando a confirmação é barrada</li>
-      </ul>
-      <div class="stack"><span>Regra de negócio</span><span>Procedure</span><span>Fila de e-mail</span></div>
+      <h3>Liberação de ajustes de estoque</h3>
+      <p><span class="label">Objetivo</span>Exigir liberação da Controladoria em todo ajuste de estoque, com aviso por e-mail.</p>
+      <p><span class="label">Ganho</span>Nenhum ajuste confirmado sem conferência, e a cobertura muda por configuração, sem código.</p>
+      <div class="stack"><span>Regra de negócio</span><span>Fila de e-mail</span></div>
     </article>
 
-    <article class="card" data-area="Financeiro">
-      <div class="card-head"><span class="area">Financeiro e Controladoria</span></div>
-      <h2>Notificação de operações por e-mail</h2>
-      <p><span class="label">Problema</span>Cada novo pedido de aviso exigia uma rotina nova.</p>
-      <p><span class="label">Solução</span>Regra genérica, que nunca bloqueia: basta incluir o tipo de operação na configuração para ele passar a notificar.</p>
-      <ul>
-        <li>E-mail em tabela com empresa, cliente ou fornecedor, valor, tipo de negociação e quem confirmou</li>
-        <li>Acompanha a transação: se a confirmação falhar, o aviso é desfeito junto</li>
-        <li>Vários destinatários separados por ponto e vírgula</li>
-      </ul>
-      <div class="stack"><span>Regra de negócio</span><span>Procedure</span></div>
+    <article class="card" data-area="Controles">
+      <div class="card-head"><span class="area">Controladoria</span></div>
+      <h3>Avisos automáticos no ERP</h3>
+      <p><span class="label">Objetivo</span>Avisar por e-mail ou na central de avisos sobre operações confirmadas e mudanças de cadastro que pedem revisão, como a troca de grupo econômico.</p>
+      <p><span class="label">Ganho</span>Um aviso novo é só configuração, sem envio duplicado, e o aviso abre o registro direto no ERP.</p>
+      <div class="stack"><span>Trigger</span><span>Package</span><span>Deep link</span></div>
     </article>
 
-    <article class="card" data-area="Financeiro">
-      <div class="card-head"><span class="area">Financeiro</span></div>
-      <h2>Adiantamento de cliente</h2>
-      <p><span class="label">Problema</span>Boletos avulsos de adiantamento eram montados à mão, sem vínculo com o pedido de venda.</p>
-      <p><span class="label">Solução</span>Botão que gera o documento de adiantamento ligado ao pedido, com o título a receber.</p>
-      <ul>
-        <li>Contrapartida passiva criada por regra na confirmação, fora do botão</li>
-        <li>Conta bancária padrão de adiantamento gravada no título</li>
-        <li>Atalho que abre o adiantamento na própria tela, sem nova aba</li>
-      </ul>
-      <div class="stack"><span>Botão de ação JS</span><span>Regra de negócio</span><span>Procedure</span></div>
+    <article class="card" data-area="Custos">
+      <div class="card-head"><span class="area">Rentabilidade</span></div>
+      <h3>Correção do frete na rentabilidade</h3>
+      <p><span class="label">Objetivo</span>Acabar com os fretes negativos na apuração de gastos variáveis, causados pela dedução do crédito de ICMS.</p>
+      <p><span class="label">Ganho</span>Margem do período correta e base histórica recalculada por um job agendado.</p>
+      <div class="stack"><span>Function</span><span>View</span><span>DBMS_SCHEDULER</span></div>
     </article>
 
-    <article class="card" data-area="Relatórios">
-      <div class="card-head"><span class="area">Relatórios</span></div>
-      <h2>Posição de estoque por linha de produto</h2>
-      <p><span class="label">Problema</span>As áreas de produto recebiam a posição de estoque em planilha exportada de um painel.</p>
-      <p><span class="label">Solução</span>Relatórios formatados por linha de produto, com envio automático semanal por e-mail.</p>
-      <ul>
-        <li>Grupo no título do relatório em vez de repetido em cada linha</li>
-        <li>Consulta derivada do painel que a área já usava</li>
-      </ul>
-      <div class="stack"><span>JasperReports</span><span>JRXML</span><span>Envio agendado</span></div>
+    <article class="card" data-area="Custos">
+      <div class="card-head"><span class="area">Estoque</span></div>
+      <h3>Posição de estoque por linha de produto</h3>
+      <p><span class="label">Objetivo</span>Relatórios formatados por linha de produto, enviados por e-mail toda semana.</p>
+      <p><span class="label">Ganho</span>As áreas de produto deixaram de receber planilhas exportadas de um painel.</p>
+      <div class="stack"><span>JasperReports</span><span>Envio agendado</span></div>
     </article>
 
-    <article class="card" data-area="Suprimentos">
-      <div class="card-head"><span class="area">Suprimentos e Fiscal</span></div>
-      <h2>Classificação de fornecedores</h2>
-      <p><span class="label">Problema</span>Não havia como separar fornecedores por natureza de compra para análises e regras fiscais.</p>
-      <p><span class="label">Solução</span>Campo adicional no cadastro de parceiros com lista de opções.</p>
-      <ul>
-        <li>Compra para revenda</li>
-        <li>Uso e consumo</li>
-        <li>Serviços com retenção</li>
-        <li>Serviços sem retenção</li>
-      </ul>
-      <div class="stack"><span>Campo adicional AD_</span><span>Dicionário de dados</span></div>
-    </article>
-
-  </section>
+  </div>
   <p class="empty" id="empty" hidden>Nenhuma entrega nesta área.</p>
-</main>
+</section>
 
 <section class="patterns" aria-labelledby="h-padroes">
-  <h2 id="h-padroes">Como trabalho: padrões que se repetem nas entregas</h2>
+  <h2 class="sec" id="h-padroes">Como trabalho</h2>
+  <p class="sec-sub">Práticas que se repetem em todas as entregas.</p>
   <ul class="plist">
-    <li><strong>O sistema padrão fica intocado</strong><p>Tabelas, views, procedures, triggers e campos novos levam o prefixo <code>AD_</code>. Atualizações do ERP não quebram nada.</p></li>
-    <li><strong>Primeiro o processo, depois o código</strong><p>Antes de alterar configuração, confiro se o processo oficial do ERP já resolve o caso. Um erro de tela às vezes indica o caminho errado, não um defeito.</p></li>
-    <li><strong>E-mail que chega de verdade</strong><p>Gravação completa na fila de mensagens e transação autônoma quando a regra bloqueia. Erros aparecem na mensagem, nunca são engolidos.</p></li>
-    <li><strong>Cada efeito no lugar certo</strong><p>Regras de negócio só validam e avisam. O que afeta outro documento, como a cópia de anexos, fica em trigger na transação do faturamento.</p></li>
-    <li><strong>Controle de duplicidade sempre</strong><p>Tabelas de vínculo com chave única e checagem antes de enfileirar: reprocessar nunca gera guia, aviso ou comissão em dobro.</p></li>
-    <li><strong>Decisão de negócio é do cliente</strong><p>Pontos em aberto viram lista de definições documentada, com proposta técnica, antes de qualquer desenvolvimento.</p></li>
+    <li><strong>O sistema padrão fica intocado</strong><p>Todo objeto novo leva o prefixo AD_ e campos são criados pelo dicionário de dados. Atualizações do ERP não quebram nada.</p></li>
+    <li><strong>Reprocessar é seguro</strong><p>Chaves de rastreio, pré-checagem, backup e script de rollback: rodar de novo nunca gera guia, nota ou comissão em dobro.</p></li>
+    <li><strong>Conferido contra o que o usuário já confia</strong><p>Cada número novo é comparado com um relatório ou campo nativo que a equipe usa antes de ir para validação.</p></li>
+    <li><strong>Primeiro o processo, depois o código</strong><p>Antes de customizar, confiro se o processo do ERP já resolve. Às vezes o erro está no lançamento, não na consulta.</p></li>
+    <li><strong>Erro que se explica</strong><p>Quando falta cadastro ou não há o que processar, a mensagem diz o motivo e onde corrigir.</p></li>
+    <li><strong>Decisão de negócio é do cliente</strong><p>Pontos em aberto viram lista de definições com proposta técnica, e cada entrega sai com documentação para quem opera.</p></li>
   </ul>
 </section>
 
@@ -295,28 +198,22 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
   const cards = Array.from(document.querySelectorAll('#grid .card'));
   const nav = document.getElementById('filters');
   const empty = document.getElementById('empty');
-  const areas = ['Todas', 'Fiscal', 'Financeiro', 'Comercial', 'Suprimentos', 'Relatórios'];
+  const areas = ['Todas', 'Fiscal', 'Financeiro', 'Controles', 'Custos'];
+  const names = {Custos: 'Custos e estoque'};
   const count = a => a === 'Todas' ? cards.length : cards.filter(c => c.dataset.area === a).length;
-
   areas.forEach(a => {
     const b = document.createElement('button');
     b.type = 'button';
     b.dataset.area = a;
     b.setAttribute('aria-pressed', a === 'Todas' ? 'true' : 'false');
-    b.innerHTML = a + '<span class="count">' + count(a) + '</span>';
+    b.innerHTML = (names[a] || a) + '<span class="count">' + count(a) + '</span>';
     b.addEventListener('click', () => apply(a));
     nav.appendChild(b);
   });
-
   function apply(a) {
-    nav.querySelectorAll('button').forEach(b =>
-      b.setAttribute('aria-pressed', b.dataset.area === a ? 'true' : 'false'));
+    nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.area === a ? 'true' : 'false'));
     let shown = 0;
-    cards.forEach(c => {
-      const on = a === 'Todas' || c.dataset.area === a;
-      c.hidden = !on;
-      if (on) shown++;
-    });
+    cards.forEach(c => { const on = a === 'Todas' || c.dataset.area === a; c.hidden = !on; if (on) shown++; });
     empty.hidden = shown > 0;
   }
 })();

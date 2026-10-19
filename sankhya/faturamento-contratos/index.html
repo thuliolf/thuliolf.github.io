@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faturamento de contratos | Thúlio Leitão</title>
+<meta name="description" content="Faturamento de contratos de terceirização no ERP Sankhya: precificação da proposta, contrato ligado ao RH, apuração mensal, emissão de notas e consolidador.">
+<link rel="canonical" href="https://thulio.com.br/sankhya/faturamento-contratos/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sankhya/style.css">
+</head>
+<body>
+<div class="page">
+
+<div class="top">
+  <a href="/">thulio.com.br</a>
+  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</div>
+
+<header class="intro">
+  <p class="kicker">Terceirização de mão de obra, SQL Server</p>
+  <h1>Faturamento de contratos, da proposta à nota fiscal</h1>
+  <p class="lede">Uma empresa de terceirização fatura todo mês o custo de cada colaborador alocado, mais encargos, taxas e impostos. Antes, isso passava por planilhas em várias etapas. Agora o preço nasce na proposta, segue para o contrato, é apurado mês a mês a partir da folha e do ponto, vira pedidos e notas de serviço e é auditado num painel único, tudo dentro do Sankhya.</p>
+  <div class="facts">
+    <span><b>50+</b> tabelas customizadas</span>
+    <span><b>20+</b> procedures</span>
+    <span><b>15+</b> triggers</span>
+    <span><b>6</b> origens de faturamento</span>
+  </div>
+</header>
+
+<section class="block" aria-label="Etapas">
+  <ol class="stages">
+    <li><span class="n">1</span><b>Proposta</b><small>Preço por cargo, com gross-up</small></li>
+    <li><span class="n">2</span><b>Contrato</b><small>Quadro, alocados e reajuste</small></li>
+    <li><span class="n">3</span><b>Apuração mensal</b><small>Folha, ponto, OS e repasses</small></li>
+    <li><span class="n">4</span><b>Emissão</b><small>Linhas de fatura, pedidos e NFS-e</small></li>
+    <li><span class="n">5</span><b>Análise</b><small>Consolidador e auditoria</small></li>
+  </ol>
+</section>
+
+<section class="block" aria-labelledby="h-mod">
+  <h2 class="sec" id="h-mod">O que cada etapa resolve</h2>
+  <div>
+
+    <article class="module">
+      <div class="tag">1. Proposta</div>
+      <div>
+        <h3>Precificação no lugar da planilha comercial</h3>
+        <p>Uma tela calcula o custo de cada cargo e o preço final do contrato: salário, adicionais, benefícios, uniformes e EPIs, equipamentos com depreciação, alojamentos e veículos. Tabelas de encargos por tipo de vínculo e de impostos por faixa de margem ficam em cadastro.</p>
+        <ul class="points">
+          <li>Mudou uma taxa ou um item, todos os totais são recalculados na hora.</li>
+          <li>Versões da proposta com histórico e fluxo de liberação.</li>
+          <li>Botão que valida a proposta aprovada e gera o contrato.</li>
+        </ul>
+        <div class="box" aria-label="Exemplo de gross-up">
+          <strong>A regra central: gross-up</strong>
+          <div class="eq">(Base + Encargos + Tx. operacional) ÷ (1 − %Adm − %Lucro − %Impostos)</div>
+          <table class="calc">
+            <tr><td>Base (salário e adicionais)</td><td>R$ 2.000,00</td></tr>
+            <tr><td>+ Encargos 70%</td><td>R$ 1.400,00</td></tr>
+            <tr><td>+ Taxa operacional 5%</td><td>R$ 170,00</td></tr>
+            <tr><td>÷ (1 − 8% − 10% − 14,25%)</td><td>÷ 0,6775</td></tr>
+            <tr class="total"><td>Valor faturado</td><td>R$ 5.269,37</td></tr>
+          </table>
+          <p class="cap">Exemplo ilustrativo.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">2. Contrato</div>
+      <div>
+        <h3>Contrato ligado ao RH, sem redigitação</h3>
+        <p>O contrato aponta sempre para a versão final da proposta e acompanha o cadastro de funcionários. Quando o RH muda a lotação de alguém, o vínculo passa para o contrato certo sozinho.</p>
+        <ul class="points">
+          <li>Quadro contratado comparado com quem está alocado em cada cargo.</li>
+          <li>Reajuste por índice gera uma nova versão da proposta com os valores corrigidos.</li>
+          <li>Alojamentos com controle de entrada e saída e trava de sobrelotação.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">3. Apuração mensal</div>
+      <div>
+        <h3>Um motor que monta tudo o que será cobrado no mês</h3>
+        <p>Uma procedure percorre os contratos ativos e alimenta seis origens de faturamento: pessoal (a partir da folha), excedentes do ponto, ordens de serviço de alojamento, serviços adicionais, repasse de despesas já pagas e valores fixos do contrato.</p>
+        <ul class="points">
+          <li>Insumos com pró-rata por admissão e desligamento.</li>
+          <li>Mês de faturamento separado do mês da folha, para contratos antecipados ou vencidos.</li>
+          <li>Rodar de novo atualiza o que mudou, sem duplicar e sem tocar no que já foi faturado.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">4. Emissão</div>
+      <div>
+        <h3>Faturamento em duas fases, até a NFS-e</h3>
+        <p>Um botão transforma o apurado em linhas de fatura conferíveis, com rastreio até o funcionário. Outro gera os pedidos por origem e tipo de nota (serviço ou nota de débito), com impostos calculados, e as notas seguem para confirmação e emissão da NFS-e com o financeiro gerado junto.</p>
+        <ul class="points">
+          <li>Valida tipo de operação, produto e modelo antes de gravar e diz onde corrigir o cadastro.</li>
+          <li>Resumo por pedido com link direto para a nota no ERP.</li>
+          <li>Quando não há o que faturar, explica o motivo em vez de mostrar "0 pedidos".</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">5. Análise</div>
+      <div>
+        <h3>Consolidador de faturamento</h3>
+        <p>Um painel dentro do ERP mostra, por contrato e origem, o que falta gerar, o que está aguardando e o que já foi faturado. Também compara proposta, contrato, apurado e faturado até o cargo, o insumo ou o título.</p>
+        <ul class="points">
+          <li>Alertas de cadastro: proposta não aprovada, cargo fora da proposta, alocados acima das vagas.</li>
+          <li>Auditoria de repasse: despesas pagas sem contrato ou com taxa divergente.</li>
+          <li>Exportação das pendências em CSV.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-res" style="padding-bottom:48px">
+  <h2 class="sec" id="h-res">Resultado</h2>
+  <p class="sec-sub">O que mudou para a equipe de faturamento.</p>
+  <div class="outcomes">
+    <div><b>Sem planilha no meio</b><p>Do preço vendido à nota emitida, cada número é calculado no ERP.</p></div>
+    <div><b>Reprocessar é seguro</b><p>Rodar de novo corrige o que mudou e preserva o que já foi faturado.</p></div>
+    <div><b>Cada valor tem origem</b><p>Do total do contrato até o funcionário, o insumo ou a despesa.</p></div>
+    <div><b>Histórico preservado</b><p>Taxas e encargos têm vigência, então meses antigos continuam consultáveis.</p></div>
+  </div>
+</section>
+
+<footer>
+  <span>Valores e nomes de contratos nesta página são ilustrativos.</span>
+  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</footer>
+
+</div>
+</body>
+</html>

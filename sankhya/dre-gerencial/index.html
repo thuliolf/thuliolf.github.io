@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRE gerencial no Sankhya | Thúlio Leitão</title>
+<meta name="description" content="DRE gerencial dentro do ERP Sankhya: estrutura em cadastro, comparativo e projeção, regime de caixa ou competência, CMV por nota, drill-down até o título e conciliação com o fiscal.">
+<link rel="canonical" href="https://thulio.com.br/sankhya/dre-gerencial/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sankhya/style.css">
+</head>
+<body>
+<div class="page">
+
+<div class="top">
+  <a href="/">thulio.com.br</a>
+  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</div>
+
+<header class="intro">
+  <p class="kicker">Controladoria, Oracle PL/SQL</p>
+  <h1>DRE gerencial dentro do ERP</h1>
+  <p class="lede">A controladoria montava o resultado fora do sistema, porque o relatório padrão não comparava anos, não projetava e não abria uma conta até os lançamentos. Construí a DRE como painel do próprio Sankhya, em duas versões para clientes diferentes: uma empresa de serviços profissionais, com comparativo e projeção, e uma empresa que vende mercadorias, com CMV e escolha entre caixa e competência.</p>
+  <div class="facts">
+    <span><b>2</b> implantações</span>
+    <span>CTE recursiva, funções analíticas, dashboards</span>
+  </div>
+</header>
+
+<section class="block" aria-label="Exemplo da DRE">
+  <div class="ledger">
+    <table>
+      <thead><tr><th>Código</th><th>Conta</th><th class="num">Valor</th><th class="num">Reflexo</th></tr></thead>
+      <tbody>
+        <tr class="g1"><td>1000</td><td>Resultado líquido (=)</td><td class="num">R$ 84.210,00</td><td class="num">8,42%</td></tr>
+        <tr class="g2"><td>1100</td><td class="ind1">Resultado bruto (=)</td><td class="num">R$ 312.540,00</td><td class="num">31,25%</td></tr>
+        <tr><td>1110</td><td class="ind2">Faturamento líquido (=)</td><td class="num">R$ 1.000.120,00</td><td class="num">100,00%</td></tr>
+        <tr><td>1120</td><td class="ind2">CMV (−)</td><td class="num neg">R$ −691.900,00</td><td class="num">69,18%</td></tr>
+        <tr class="g2"><td>1200</td><td class="ind1">Despesas operacionais (−)</td><td class="num neg">R$ −228.330,00</td><td class="num">22,83%</td></tr>
+        <tr><td>1210</td><td class="ind2">Administrativas</td><td class="num neg">R$ −131.050,00</td><td class="num">13,10%</td></tr>
+        <tr><td>1220</td><td class="ind2">Comerciais</td><td class="num neg">R$ −97.280,00</td><td class="num">9,73%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">Valores e plano de contas ilustrativos. Cada linha abre um segundo nível com os títulos e notas que a compõem.</p>
+</section>
+
+<section class="block" aria-labelledby="h-mod">
+  <h2 class="sec" id="h-mod">O que a DRE faz</h2>
+  <div>
+
+    <article class="module">
+      <div class="tag">Estrutura</div>
+      <div>
+        <h3>Plano da DRE em cadastro, com drill-down</h3>
+        <p>As contas e seus vínculos com naturezas e centros de resultado ficam em tabelas que o próprio usuário mantém. Contas novas entram pela tela, sem mexer na consulta. Qualquer linha abre os títulos e notas que a formam, e o detalhe fecha com o total clicado.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Comparativo</div>
+      <div>
+        <h3>Dois anos lado a lado e projeção do próximo</h3>
+        <p>Realizado de dois exercícios com análise vertical e horizontal, e uma visão mensal com variação mês a mês. A projeção usa percentual sobre o ano anterior ou valor digitado, e os totais sobem já calculados.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Regime</div>
+      <div>
+        <h3>Caixa ou competência sem distorcer a operação</h3>
+        <p>Trocar o regime muda as despesas, que passam a seguir a data da baixa ou da negociação, mas preserva faturamento, devoluções e CMV. O resultado bruto fica estável.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Custo</div>
+      <div>
+        <h3>CMV de venda e devolução por nota</h3>
+        <p>O custo vem das notas confirmadas, com o tipo de custo escolhido no painel (médio, reposição, gerencial). O arredondamento é feito por nota, então os níveis fecham sem diferença de centavos.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Consistência</div>
+      <div>
+        <h3>Cada lançamento cai em uma única conta</h3>
+        <p>Quando natureza e centro de resultado apontavam para contas diferentes, o mesmo valor entrava duas vezes. Uma regra de prioridade decide um único destino para cada lançamento, inclusive nos rateados.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Validação</div>
+      <div>
+        <h3>Conciliada com o fiscal e a contabilidade</h3>
+        <p>A DRE passou por validação externa. A diferença com o livro fiscal foi rastreada até lançamentos classificados com a natureza errada, corrigidos na origem e não escondidos na consulta. O realizado foi conferido contra o relatório de faturamento que a empresa já usava.</p>
+        <ul class="points">
+          <li>Checklist de seis consultas que a TI do cliente roda; o esperado é zero em todas.</li>
+          <li>Documentação técnica, parecer para diretoria e contabilidade e roteiro de ajustes para a equipe interna.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-res" style="padding-bottom:48px">
+  <h2 class="sec" id="h-res">Resultado</h2>
+  <p class="sec-sub">O que o painel garante hoje.</p>
+  <div class="outcomes">
+    <div><b>Totais que fecham</b><p>A soma do detalhe é igual à linha do painel, inclusive no CMV.</p></div>
+    <div><b>Sem dupla contagem</b><p>Cada lançamento, rateado ou não, cai em uma única conta.</p></div>
+    <div><b>Regime coerente</b><p>Caixa e competência mudam as despesas e preservam o resultado bruto.</p></div>
+    <div><b>Fora da planilha</b><p>Comparativo, projeção e análise mensal saem do próprio ERP.</p></div>
+  </div>
+</section>
+
+<footer>
+  <span>Dados de clientes omitidos, valores ilustrativos.</span>
+  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</footer>
+
+</div>
+</body>
+</html>

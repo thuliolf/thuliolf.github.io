@@ -152,30 +152,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
     <section id="sankhya" aria-labelledby="h-sankhya">
       <h2 id="h-sankhya">Trabalhos no ERP Sankhya</h2>
-      <p class="intro">Alguns trabalhos recentes feitos para clientes. O código pertence a eles, por isso aqui vai só a descrição.</p>
+      <p class="intro">Customizações entregues para clientes de terceirização, serviços profissionais, importação e distribuição. O código pertence a eles, por isso aqui vai só o que cada projeto resolve.</p>
 
       <article class="project">
-        <h3>Faturamento automático de NFS-e a partir de contratos</h3>
-        <p class="client">Empresa de terceirização de serviços</p>
-        <p>Botões de ação que geram e confirmam as notas de serviço direto dos contratos, em duas versões: item a item ou a nota inteira com todos os itens pendentes. O financeiro sai junto com a confirmação, sem retrabalho do faturamento.</p>
-        <p class="stack">JavaScript (Rhino), API Java do Sankhya, NFS-e</p>
+        <h3>Faturamento de contratos, da proposta à nota</h3>
+        <p class="client">Terceirização de mão de obra</p>
+        <p>O preço de cada cargo é calculado na proposta, segue para o contrato, é apurado todo mês a partir da folha e do ponto e vira pedidos e NFS-e. O faturamento deixou de passar por planilhas e ganhou um painel que mostra de onde vem cada valor.</p>
+        <p class="stack">SQL Server, JavaScript (Rhino), HTML5</p>
+        <div class="links"><a href="/sankhya/faturamento-contratos/">Ver o projeto</a></div>
       </article>
 
       <article class="project">
-        <h3>DANFSE personalizado</h3>
-        <p class="client">Empresa de terceirização de serviços</p>
-        <p>Relatório da nota fiscal de serviço eletrônica que lê os dados direto do XML autorizado da nota, em vez de remontá-los por consultas. Inclui os tributos da reforma (IBS e CBS) e corrige município, CNAE e item da lista de serviços.</p>
-        <p class="stack">iReport / JasperReports, XPath, SQL</p>
+        <h3>DRE gerencial dentro do ERP</h3>
+        <p class="client">Serviços profissionais e comércio</p>
+        <p>Demonstração de resultado com comparativo entre anos, projeção, regime de caixa ou competência e abertura de qualquer linha até o título de origem, conciliada com o fiscal e a contabilidade.</p>
+        <p class="stack">Oracle PL/SQL, dashboards</p>
+        <div class="links"><a href="/sankhya/dre-gerencial/">Ver o projeto</a></div>
       </article>
 
       <article class="project">
-        <h3>Importação de NFS-e emitidas fora do ERP</h3>
-        <p class="client">Empresa do setor de serviços</p>
-        <p>Script em etapas que leu cerca de 300 XMLs de NFS-e emitidas externamente e preencheu número, chave, status e ISS nas notas pendentes do Sankhya. Pode ser executado de novo sem duplicar dados, e as notas ambíguas ficaram separadas para conferência manual.</p>
-        <p class="stack">Oracle SQL e PL/SQL, XML</p>
+        <h3>Custo das notas complementares de importação</h3>
+        <p class="client">Importação e distribuição</p>
+        <p>Uma nota-espelho gerencial leva os tributos da nota complementar para o custo médio, sem mudar a exigência contábil de emiti-la com quantidade zero. Validado ponta a ponta e em produção.</p>
+        <p class="stack">Oracle PL/SQL, regras de negócio, fórmulas de custo</p>
       </article>
 
-      <p class="more"><a href="/sankhya/">Ver mais 10 customizações para um grupo de empresas</a>, com rotinas fiscais, aprovações, painéis de gestão e relatórios automáticos.</p>
+      <p class="more"><a href="/sankhya/">Ver as 16 entregas</a>, incluindo rotinas fiscais de NFS-e, painéis financeiros e controles de aprovação.</p>
     </section>
 
     <section id="projetos" aria-labelledby="h-projetos">
