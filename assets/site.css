@@ -212,3 +212,7 @@ table.calc tr.total td{border-bottom:0;border-top:2px solid var(--graphite);font
 .contact .sub{font-size:18px;max-width:62ch}
 .area{font-size:14px;font-weight:600;color:var(--muted)}
 @media (max-width:640px){.contact::after{right:-260px;top:-90px}}
+
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.areas span{font-family:var(--head);font-weight:600;font-size:14px;color:var(--graphite);background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+.areas span:nth-child(3n+1){background:var(--cyan-soft);border-color:#BDEFF7}
