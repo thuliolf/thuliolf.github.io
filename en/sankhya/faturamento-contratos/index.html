@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contract billing | Thúlio Leitão</title>
+<meta name="description" content="Outsourcing contract billing in Sankhya ERP: proposal pricing, HR-linked contracts, monthly calculation, invoicing and a consolidation dashboard.">
+<link rel="canonical" href="https://thulio.com.br/en/sankhya/faturamento-contratos/">
+<!--alt--><link rel="alternate" hreflang="pt-BR" href="https://thulio.com.br/sankhya/faturamento-contratos/">
+<link rel="alternate" hreflang="en" href="https://thulio.com.br/en/sankhya/faturamento-contratos/">
+<link rel="alternate" hreflang="es" href="https://thulio.com.br/es/sankhya/faturamento-contratos/">
+<link rel="alternate" hreflang="x-default" href="https://thulio.com.br/sankhya/faturamento-contratos/"><!--/alt-->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/en/" aria-label="TL Tec, home"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="/en/#sobre">About</a></li>
+        <li><a href="/en/sankhya/">Work</a></li>
+        <li><a href="/en/#projetos">Projects</a></li>
+        <li><a href="/en/#experiencia">Experience</a></li>
+        <!--lang--><li class="keep lang" aria-label="Language"><a href="/sankhya/faturamento-contratos/" hreflang="pt-BR" lang="pt-BR">PT</a><a href="/en/sankhya/faturamento-contratos/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/es/sankhya/faturamento-contratos/" hreflang="es" lang="es">ES</a></li><!--/lang-->
+        <li class="keep"><a class="cta" href="/en/#contato">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/en/">Home</a> / <a href="/en/sankhya/">Sankhya work</a></p>
+  <p class="eyebrow">Workforce outsourcing, SQL Server, 2026</p>
+  <h1>Contract billing, from proposal to invoice</h1>
+  <p class="lede">An outsourcing company bills every month for each assigned worker, plus payroll charges, fees and taxes. This used to go through spreadsheets at several steps. Now the price is set in the proposal, carried into the contract, calculated monthly from payroll and timesheets, turned into orders and service invoices and audited in a single dashboard, all inside Sankhya.</p>
+  <div class="facts">
+    <div><b>50+</b><span>custom tables</span></div>
+    <div><b>20+</b><span>procedures</span></div>
+    <div><b>15+</b><span>triggers</span></div>
+    <div><b>6</b><span>billing sources</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" aria-label="Stages">
+<div class="container">
+  <ol class="stages">
+    <li><span class="n">1</span><b>Proposal</b><small>Price per role, with gross-up</small></li>
+    <li><span class="n">2</span><b>Contract</b><small>Headcount, assignments and adjustments</small></li>
+    <li><span class="n">3</span><b>Monthly calculation</b><small>Payroll, timesheets, work orders and pass-throughs</small></li>
+    <li><span class="n">4</span><b>Invoicing</b><small>Billing lines, orders and service invoices</small></li>
+    <li><span class="n">5</span><b>Analysis</b><small>Consolidation and audit</small></li>
+  </ol>
+</div>
+</section>
+
+<section class="section soft" aria-labelledby="h-mod">
+<div class="container">
+  <h2 id="h-mod">What each stage solves</h2>
+  <div>
+
+    <article class="module">
+      <div class="tag">1. Proposal</div>
+      <div>
+        <h3>Pricing instead of the sales spreadsheet</h3>
+        <p>A screen calculates the cost of each role and the final contract price: salary, allowances, benefits, uniforms and safety gear, equipment with depreciation, housing and vehicles. Payroll charge tables by employment type and tax tables by margin band are kept as master data.</p>
+        <ul class="points">
+          <li>Change a rate or an item and every total is recalculated instantly.</li>
+          <li>Proposal versions with history and an approval flow.</li>
+          <li>A button that validates the approved proposal and creates the contract.</li>
+        </ul>
+        <div class="box" aria-label="Gross-up example">
+          <strong>The core rule: gross-up</strong>
+          <div class="eq">(Base + Payroll charges + Operating fee) ÷ (1 − %Admin − %Profit − %Taxes)</div>
+          <table class="calc">
+            <tr><td>Base (salary and allowances)</td><td>R$ 2,000.00</td></tr>
+            <tr><td>+ Payroll charges 70%</td><td>R$ 1,400.00</td></tr>
+            <tr><td>+ Operating fee 5%</td><td>R$ 170.00</td></tr>
+            <tr><td>÷ (1 − 8% − 10% − 14.25%)</td><td>÷ 0.6775</td></tr>
+            <tr class="total"><td>Billed amount</td><td>R$ 5,269.37</td></tr>
+          </table>
+          <p class="cap">Illustrative example.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">2. Contract</div>
+      <div>
+        <h3>Contract linked to HR, no retyping</h3>
+        <p>The contract always points to the final proposal version and follows the employee records. When HR changes someone's assignment, the link moves to the right contract on its own.</p>
+        <ul class="points">
+          <li>Contracted headcount compared with who is assigned to each role.</li>
+          <li>Index-based adjustments create a new proposal version with updated amounts.</li>
+          <li>Housing with check-in and check-out control and an overbooking lock.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">3. Monthly calculation</div>
+      <div>
+        <h3>An engine that assembles everything billed in the month</h3>
+        <p>A procedure walks through active contracts and feeds six billing sources: personnel (from payroll), timesheet overages, housing work orders, additional services, pass-through of expenses already paid and fixed contract amounts.</p>
+        <ul class="points">
+          <li>Supplies prorated by hiring and termination dates.</li>
+          <li>Billing month kept separate from payroll month, for contracts billed in advance or in arrears.</li>
+          <li>Running again updates what changed, without duplicating or touching what was already billed.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">4. Invoicing</div>
+      <div>
+        <h3>Two-phase billing, through to the service invoice</h3>
+        <p>One button turns the calculation into reviewable billing lines, traceable down to the employee. Another creates orders by source and document type (service invoice or debit note) with taxes calculated, and the invoices go on to confirmation and NFS-e issuance with receivables created alongside.</p>
+        <ul class="points">
+          <li>Validates operation type, product and template before saving, and says where to fix the setup.</li>
+          <li>Summary per order with a direct link to the invoice in the ERP.</li>
+          <li>When there is nothing to bill, it explains why instead of showing "0 orders".</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">5. Analysis</div>
+      <div>
+        <h3>Billing consolidation dashboard</h3>
+        <p>A dashboard inside the ERP shows, by contract and source, what still needs to be generated, what is pending and what has been billed. It also compares proposal, contract, calculated and billed amounts down to the role, supply item or receivable.</p>
+        <ul class="points">
+          <li>Setup alerts: proposal not approved, role outside the proposal, more people assigned than positions.</li>
+          <li>Pass-through audit: expenses paid with no contract or with a mismatched fee.</li>
+          <li>Export of pending items to CSV.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="h-res">
+<div class="container">
+  <h2 id="h-res">Results</h2>
+  <p class="sub" style="margin-bottom:28px">What changed for the billing team.</p>
+  <div class="outcomes">
+    <div><b>No spreadsheet in between</b><p>From the price sold to the invoice issued, every figure is calculated in the ERP.</p></div>
+    <div><b>Reruns are safe</b><p>Running again fixes what changed and preserves what was already billed.</p></div>
+    <div><b>Every amount has a source</b><p>From the contract total down to the employee, supply item or expense.</p></div>
+    <div><b>History preserved</b><p>Rates and charges have effective dates, so past months remain queryable.</p></div>
+  </div>
+</div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/en/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Information Systems Solutions</span>
+    <span>Client names omitted, figures illustrative.</span>
+  </div>
+</footer>
+</body>
+</html>

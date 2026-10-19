@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Management P&L in Sankhya | Thúlio Leitão</title>
+<meta name="description" content="Management P&L inside Sankhya ERP: structure as master data, comparison and forecasting, cash or accrual basis, COGS per invoice, drill-down to the source document and reconciliation with tax records.">
+<link rel="canonical" href="https://thulio.com.br/en/sankhya/dre-gerencial/">
+<!--alt--><link rel="alternate" hreflang="pt-BR" href="https://thulio.com.br/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="en" href="https://thulio.com.br/en/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="es" href="https://thulio.com.br/es/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="x-default" href="https://thulio.com.br/sankhya/dre-gerencial/"><!--/alt-->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/en/" aria-label="TL Tec, home"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="/en/#sobre">About</a></li>
+        <li><a href="/en/sankhya/">Work</a></li>
+        <li><a href="/en/#projetos">Projects</a></li>
+        <li><a href="/en/#experiencia">Experience</a></li>
+        <!--lang--><li class="keep lang" aria-label="Language"><a href="/sankhya/dre-gerencial/" hreflang="pt-BR" lang="pt-BR">PT</a><a href="/en/sankhya/dre-gerencial/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/es/sankhya/dre-gerencial/" hreflang="es" lang="es">ES</a></li><!--/lang-->
+        <li class="keep"><a class="cta" href="/en/#contato">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/en/">Home</a> / <a href="/en/sankhya/">Sankhya work</a></p>
+  <p class="eyebrow">Controlling, Oracle PL/SQL, 2026</p>
+  <h1>Management P&L inside the ERP</h1>
+  <p class="lede">Controlling built the income statement outside the system because the standard report did not compare years, forecast or drill from an account down to entries. I built the P&L as a Sankhya dashboard, in two versions for different clients: a professional services firm, with comparison and forecasting, and a company that sells goods, with cost of goods sold and a choice between cash and accrual basis.</p>
+  <div class="facts">
+    <div><b>2</b><span>implementations</span></div>
+    <div><b>Oracle PL/SQL</b><span>Recursive CTE, analytic functions, dashboards</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" aria-label="P&L example">
+<div class="container">
+  <div class="ledger">
+    <table>
+      <thead><tr><th>Code</th><th>Account</th><th class="num">Amount</th><th class="num">Share</th></tr></thead>
+      <tbody>
+        <tr class="g1"><td>1000</td><td>Net income (=)</td><td class="num">R$ 84,210.00</td><td class="num">8.42%</td></tr>
+        <tr class="g2"><td>1100</td><td class="ind1">Gross profit (=)</td><td class="num">R$ 312,540.00</td><td class="num">31.25%</td></tr>
+        <tr><td>1110</td><td class="ind2">Net revenue (=)</td><td class="num">R$ 1,000,120.00</td><td class="num">100.00%</td></tr>
+        <tr><td>1120</td><td class="ind2">COGS (−)</td><td class="num neg">R$ −691,900.00</td><td class="num">69.18%</td></tr>
+        <tr class="g2"><td>1200</td><td class="ind1">Operating expenses (−)</td><td class="num neg">R$ −228,330.00</td><td class="num">22.83%</td></tr>
+        <tr><td>1210</td><td class="ind2">Administrative</td><td class="num neg">R$ −131,050.00</td><td class="num">13.10%</td></tr>
+        <tr><td>1220</td><td class="ind2">Selling</td><td class="num neg">R$ −97,280.00</td><td class="num">9.73%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">Illustrative amounts and chart of accounts. Each line opens a second level with the receivables, payables and invoices behind it.</p>
+</div>
+</section>
+
+<section class="section soft" aria-labelledby="h-mod">
+<div class="container">
+  <h2 id="h-mod">What the P&L does</h2>
+  <div>
+
+    <article class="module">
+      <div class="tag">Structure</div>
+      <div>
+        <h3>P&L structure as master data, with drill-down</h3>
+        <p>Accounts and their links to expense categories and cost centers live in tables the users maintain themselves. New accounts are added through the screen, without touching the query. Any line opens the documents behind it, and the detail adds up to the total clicked.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Comparison</div>
+      <div>
+        <h3>Two years side by side and a forecast for the next</h3>
+        <p>Actuals for two fiscal years with vertical and horizontal analysis, plus a monthly view with month-over-month change. The forecast uses a percentage over the prior year or an entered amount, and totals roll up already calculated.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Basis</div>
+      <div>
+        <h3>Cash or accrual without distorting operations</h3>
+        <p>Switching the basis changes expenses, which follow the payment or transaction date, but keeps revenue, returns and COGS. Gross profit stays stable.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Cost</div>
+      <div>
+        <h3>COGS for sales and returns per invoice</h3>
+        <p>Cost comes from confirmed invoices, using the cost type chosen in the dashboard (average, replacement, management). Rounding is done per invoice, so the levels add up without cent differences.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Consistency</div>
+      <div>
+        <h3>Each entry lands in a single account</h3>
+        <p>When the expense category and cost center pointed to different accounts, the same amount was counted twice. A priority rule now picks a single destination for each entry, including allocated ones.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Validation</div>
+      <div>
+        <h3>Reconciled with tax records and accounting</h3>
+        <p>The P&L went through external validation. The gap with the tax ledger was traced to entries classified under the wrong category, fixed at the source rather than hidden in the query. Actuals were checked against the revenue report the company already used.</p>
+        <ul class="points">
+          <li>A checklist of six queries the client's IT team runs; the expected result is zero for all of them.</li>
+          <li>Technical documentation, a report for management and accounting, and an adjustment guide for the internal team.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="h-res">
+<div class="container">
+  <h2 id="h-res">Results</h2>
+  <p class="sub" style="margin-bottom:28px">What the dashboard guarantees today.</p>
+  <div class="outcomes">
+    <div><b>Totals that add up</b><p>The detail sum equals the dashboard line, including COGS.</p></div>
+    <div><b>No double counting</b><p>Every entry, allocated or not, lands in a single account.</p></div>
+    <div><b>Consistent basis</b><p>Cash and accrual change expenses and keep gross profit intact.</p></div>
+    <div><b>Off the spreadsheet</b><p>Comparison, forecasting and monthly analysis come straight from the ERP.</p></div>
+  </div>
+</div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/en/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Information Systems Solutions</span>
+    <span>Client names omitted, figures illustrative.</span>
+  </div>
+</footer>
+</body>
+</html>

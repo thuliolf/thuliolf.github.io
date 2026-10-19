@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estado de resultados gerencial en Sankhya | Thúlio Leitão</title>
+<meta name="description" content="Estado de resultados gerencial dentro del ERP Sankhya: estructura en registros, comparativo y proyección, base de caja o devengado, costo de ventas por factura, drill-down hasta el documento y conciliación con el área fiscal.">
+<link rel="canonical" href="https://thulio.com.br/es/sankhya/dre-gerencial/">
+<!--alt--><link rel="alternate" hreflang="pt-BR" href="https://thulio.com.br/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="en" href="https://thulio.com.br/en/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="es" href="https://thulio.com.br/es/sankhya/dre-gerencial/">
+<link rel="alternate" hreflang="x-default" href="https://thulio.com.br/sankhya/dre-gerencial/"><!--/alt-->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/es/" aria-label="TL Tec, inicio"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Secciones">
+      <ul>
+        <li><a href="/es/#sobre">Sobre mí</a></li>
+        <li><a href="/es/sankhya/">Trabajos</a></li>
+        <li><a href="/es/#projetos">Proyectos</a></li>
+        <li><a href="/es/#experiencia">Experiencia</a></li>
+        <!--lang--><li class="keep lang" aria-label="Idioma"><a href="/sankhya/dre-gerencial/" hreflang="pt-BR" lang="pt-BR">PT</a><a href="/en/sankhya/dre-gerencial/" hreflang="en" lang="en">EN</a><a href="/es/sankhya/dre-gerencial/" hreflang="es" lang="es" aria-current="page">ES</a></li><!--/lang-->
+        <li class="keep"><a class="cta" href="/es/#contato">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/es/">Inicio</a> / <a href="/es/sankhya/">Trabajos Sankhya</a></p>
+  <p class="eyebrow">Contraloría, Oracle PL/SQL, 2026</p>
+  <h1>Estado de resultados gerencial dentro del ERP</h1>
+  <p class="lede">Contraloría armaba el resultado fuera del sistema, porque el informe estándar no comparaba años, no proyectaba y no abría una cuenta hasta los registros. Construí el estado de resultados como panel del propio Sankhya, en dos versiones para clientes distintos: una empresa de servicios profesionales, con comparativo y proyección, y una empresa que vende mercaderías, con costo de ventas y elección entre caja y devengado.</p>
+  <div class="facts">
+    <div><b>2</b><span>implantaciones</span></div>
+    <div><b>Oracle PL/SQL</b><span>CTE recursiva, funciones analíticas, dashboards</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" aria-label="Ejemplo del estado de resultados">
+<div class="container">
+  <div class="ledger">
+    <table>
+      <thead><tr><th>Código</th><th>Cuenta</th><th class="num">Valor</th><th class="num">Incidencia</th></tr></thead>
+      <tbody>
+        <tr class="g1"><td>1000</td><td>Resultado neto (=)</td><td class="num">R$ 84.210,00</td><td class="num">8,42%</td></tr>
+        <tr class="g2"><td>1100</td><td class="ind1">Resultado bruto (=)</td><td class="num">R$ 312.540,00</td><td class="num">31,25%</td></tr>
+        <tr><td>1110</td><td class="ind2">Facturación neta (=)</td><td class="num">R$ 1.000.120,00</td><td class="num">100,00%</td></tr>
+        <tr><td>1120</td><td class="ind2">Costo de ventas (−)</td><td class="num neg">R$ −691.900,00</td><td class="num">69,18%</td></tr>
+        <tr class="g2"><td>1200</td><td class="ind1">Gastos operativos (−)</td><td class="num neg">R$ −228.330,00</td><td class="num">22,83%</td></tr>
+        <tr><td>1210</td><td class="ind2">Administrativos</td><td class="num neg">R$ −131.050,00</td><td class="num">13,10%</td></tr>
+        <tr><td>1220</td><td class="ind2">Comerciales</td><td class="num neg">R$ −97.280,00</td><td class="num">9,73%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">Valores y plan de cuentas ilustrativos. Cada línea abre un segundo nivel con los títulos y facturas que la componen.</p>
+</div>
+</section>
+
+<section class="section soft" aria-labelledby="h-mod">
+<div class="container">
+  <h2 id="h-mod">Qué hace el estado de resultados</h2>
+  <div>
+
+    <article class="module">
+      <div class="tag">Estructura</div>
+      <div>
+        <h3>Plan del estado de resultados en registros, con drill-down</h3>
+        <p>Las cuentas y sus vínculos con naturalezas y centros de resultados quedan en tablas que el propio usuario mantiene. Las cuentas nuevas entran por la pantalla, sin tocar la consulta. Cualquier línea abre los títulos y facturas que la forman, y el detalle cierra con el total seleccionado.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Comparativo</div>
+      <div>
+        <h3>Dos años lado a lado y proyección del siguiente</h3>
+        <p>Real de dos ejercicios con análisis vertical y horizontal, y una vista mensual con variación mes a mes. La proyección usa un porcentaje sobre el año anterior o un valor digitado, y los totales suben ya calculados.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Base contable</div>
+      <div>
+        <h3>Caja o devengado sin distorsionar la operación</h3>
+        <p>Cambiar la base modifica los gastos, que siguen la fecha de pago o de negociación, pero preserva facturación, devoluciones y costo de ventas. El resultado bruto queda estable.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Costo</div>
+      <div>
+        <h3>Costo de ventas y devoluciones por factura</h3>
+        <p>El costo viene de las facturas confirmadas, con el tipo de costo elegido en el panel (promedio, reposición, gerencial). El redondeo se hace por factura, así que los niveles cierran sin diferencias de centavos.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Consistencia</div>
+      <div>
+        <h3>Cada registro cae en una única cuenta</h3>
+        <p>Cuando naturaleza y centro de resultados apuntaban a cuentas distintas, el mismo valor entraba dos veces. Una regla de prioridad decide un único destino para cada registro, incluidos los prorrateados.</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="tag">Validación</div>
+      <div>
+        <h3>Conciliado con el área fiscal y la contabilidad</h3>
+        <p>El estado de resultados pasó por validación externa. La diferencia con el libro fiscal se rastreó hasta registros clasificados con la naturaleza equivocada, corregidos en el origen y no ocultados en la consulta. Lo real se verificó contra el informe de facturación que la empresa ya usaba.</p>
+        <ul class="points">
+          <li>Checklist de seis consultas que corre el equipo de TI del cliente; lo esperado es cero en todas.</li>
+          <li>Documentación técnica, informe para la dirección y la contabilidad y guía de ajustes para el equipo interno.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="h-res">
+<div class="container">
+  <h2 id="h-res">Resultado</h2>
+  <p class="sub" style="margin-bottom:28px">Lo que el panel garantiza hoy.</p>
+  <div class="outcomes">
+    <div><b>Totales que cierran</b><p>La suma del detalle es igual a la línea del panel, incluso en el costo de ventas.</p></div>
+    <div><b>Sin doble conteo</b><p>Cada registro, prorrateado o no, cae en una única cuenta.</p></div>
+    <div><b>Base coherente</b><p>Caja y devengado cambian los gastos y preservan el resultado bruto.</p></div>
+    <div><b>Fuera de la planilla</b><p>Comparativo, proyección y análisis mensual salen del propio ERP.</p></div>
+  </div>
+</div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/es/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Soluciones en Sistemas de Información</span>
+    <span>Nombres de clientes omitidos, valores ilustrativos.</span>
+  </div>
+</footer>
+</body>
+</html>
