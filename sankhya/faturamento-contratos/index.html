@@ -9,30 +9,43 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/sankhya/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="page">
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/" aria-label="TL Tec, início"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/sankhya/">Trabalhos</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#experiencia">Experiência</a></li>
+        <li class="keep"><a class="cta" href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
 
-<div class="top">
-  <a href="/">thulio.com.br</a>
-  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
-</div>
-
-<header class="intro">
-  <p class="kicker">Terceirização de mão de obra, SQL Server</p>
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/">Início</a> / <a href="/sankhya/">Trabalhos Sankhya</a></p>
+  <p class="eyebrow">Terceirização de mão de obra, SQL Server</p>
   <h1>Faturamento de contratos, da proposta à nota fiscal</h1>
   <p class="lede">Uma empresa de terceirização fatura todo mês o custo de cada colaborador alocado, mais encargos, taxas e impostos. Antes, isso passava por planilhas em várias etapas. Agora o preço nasce na proposta, segue para o contrato, é apurado mês a mês a partir da folha e do ponto, vira pedidos e notas de serviço e é auditado num painel único, tudo dentro do Sankhya.</p>
   <div class="facts">
-    <span><b>50+</b> tabelas customizadas</span>
-    <span><b>20+</b> procedures</span>
-    <span><b>15+</b> triggers</span>
-    <span><b>6</b> origens de faturamento</span>
+    <div><b>50+</b><span>tabelas customizadas</span></div>
+    <div><b>20+</b><span>procedures</span></div>
+    <div><b>15+</b><span>triggers</span></div>
+    <div><b>6</b><span>origens de faturamento</span></div>
   </div>
-</header>
+</div>
+</section>
 
-<section class="block" aria-label="Etapas">
+<section class="section" aria-label="Etapas">
+<div class="container">
   <ol class="stages">
     <li><span class="n">1</span><b>Proposta</b><small>Preço por cargo, com gross-up</small></li>
     <li><span class="n">2</span><b>Contrato</b><small>Quadro, alocados e reajuste</small></li>
@@ -40,10 +53,12 @@
     <li><span class="n">4</span><b>Emissão</b><small>Linhas de fatura, pedidos e NFS-e</small></li>
     <li><span class="n">5</span><b>Análise</b><small>Consolidador e auditoria</small></li>
   </ol>
+</div>
 </section>
 
-<section class="block" aria-labelledby="h-mod">
-  <h2 class="sec" id="h-mod">O que cada etapa resolve</h2>
+<section class="section soft" aria-labelledby="h-mod">
+<div class="container">
+  <h2 id="h-mod">O que cada etapa resolve</h2>
   <div>
 
     <article class="module">
@@ -124,24 +139,29 @@
     </article>
 
   </div>
+</div>
 </section>
 
-<section class="block" aria-labelledby="h-res" style="padding-bottom:48px">
-  <h2 class="sec" id="h-res">Resultado</h2>
-  <p class="sec-sub">O que mudou para a equipe de faturamento.</p>
+<section class="section" aria-labelledby="h-res">
+<div class="container">
+  <h2 id="h-res">Resultado</h2>
+  <p class="sub" style="margin-bottom:28px">O que mudou para a equipe de faturamento.</p>
   <div class="outcomes">
     <div><b>Sem planilha no meio</b><p>Do preço vendido à nota emitida, cada número é calculado no ERP.</p></div>
     <div><b>Reprocessar é seguro</b><p>Rodar de novo corrige o que mudou e preserva o que já foi faturado.</p></div>
     <div><b>Cada valor tem origem</b><p>Do total do contrato até o funcionário, o insumo ou a despesa.</p></div>
     <div><b>Histórico preservado</b><p>Taxas e encargos têm vigência, então meses antigos continuam consultáveis.</p></div>
   </div>
+</div>
 </section>
 
-<footer>
-  <span>Valores e nomes de contratos nesta página são ilustrativos.</span>
-  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Soluções em Sistemas de Informação</span>
+    <span>Nomes de clientes omitidos, valores ilustrativos.</span>
+  </div>
 </footer>
-
-</div>
 </body>
 </html>

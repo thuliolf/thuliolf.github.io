@@ -9,58 +9,73 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/sankhya/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="page">
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/" aria-label="TL Tec, início"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/sankhya/">Trabalhos</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#experiencia">Experiência</a></li>
+        <li class="keep"><a class="cta" href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
 
-<div class="top">
-  <a href="/">thulio.com.br</a>
-  <a href="/#sankhya">Voltar ao perfil</a>
-</div>
-
-<header class="intro">
-  <p class="kicker">ERP Sankhya, Oracle e SQL Server</p>
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/">Início</a></p>
+  <p class="eyebrow">ERP Sankhya, Oracle e SQL Server</p>
   <h1>Trabalhos no ERP Sankhya</h1>
   <p class="lede">Customizações entregues para quatro clientes de segmentos diferentes: terceirização de mão de obra, serviços profissionais, importação e distribuição e um grupo com várias empresas. Tudo construído como extensão do ERP, sem alterar o sistema padrão. Nomes de clientes, pessoas e valores foram omitidos.</p>
   <div class="facts">
-    <span><b>16</b> entregas</span>
-    <span><b>4</b> segmentos</span>
-    <span>PL/SQL, T-SQL, JavaScript, dashboards, JasperReports</span>
+    <div><b>16</b><span>entregas</span></div>
+    <div><b>4</b><span>segmentos</span></div>
+    <div><b>Oracle e SQL Server</b><span>PL/SQL, T-SQL, JavaScript, JasperReports</span></div>
   </div>
-</header>
+</div>
+</section>
 
-<section class="block" aria-labelledby="h-dest">
-  <h2 class="sec" id="h-dest">Destaques</h2>
-  <p class="sec-sub">Os três projetos de maior alcance.</p>
-  <div class="highlights">
-    <article class="hl">
+<section class="section" aria-labelledby="h-dest">
+<div class="container">
+  <h2 id="h-dest">Destaques</h2>
+  <p class="sub" style="margin-bottom:28px">Os três projetos de maior alcance.</p>
+  <div class="cards">
+    <article class="card accent">
       <span class="seg">Terceirização de mão de obra</span>
       <h3>Faturamento de contratos, da proposta à nota</h3>
       <p>O preço de cada cargo é calculado na proposta, herdado pelo contrato, apurado todo mês a partir da folha e do ponto e transformado em pedidos e notas.</p>
       <p><span class="label">Ganho</span>Faturamento mensal sem planilha, reprocessável sem duplicar e auditado num painel que mostra de onde vem cada valor.</p>
       <a class="go" href="/sankhya/faturamento-contratos/">Ver o projeto</a>
     </article>
-    <article class="hl">
+    <article class="card accent">
       <span class="seg">Serviços profissionais e comércio</span>
       <h3>DRE gerencial dentro do ERP</h3>
       <p>Demonstração de resultado com comparativo entre anos, projeção, regime de caixa ou competência e abertura de qualquer linha até o título de origem.</p>
       <p><span class="label">Ganho</span>A controladoria deixou de montar o resultado fora do ERP, com números conciliados com o fiscal e a contabilidade.</p>
       <a class="go" href="/sankhya/dre-gerencial/">Ver o projeto</a>
     </article>
-    <article class="hl">
+    <article class="card accent">
       <span class="seg">Importação e distribuição</span>
       <h3>Custo das notas complementares de importação</h3>
       <p>A nota complementar de impostos de importação sai com quantidade zero, como exige a contabilidade, e uma nota-espelho gerencial leva o valor dos tributos para o custo médio.</p>
       <p><span class="label">Ganho</span>Custo do produto correto sem mexer na regra fiscal, validado ponta a ponta e em produção, com manual para o usuário.</p>
     </article>
   </div>
+</div>
 </section>
 
-<section class="block" aria-labelledby="h-cat">
-  <h2 class="sec" id="h-cat">Outras entregas</h2>
-  <p class="sec-sub">Resumo do objetivo e do ganho de cada uma.</p>
+<section class="section soft" aria-labelledby="h-cat">
+<div class="container">
+  <h2 id="h-cat">Outras entregas</h2>
+  <p class="sub" style="margin-bottom:28px">Resumo do objetivo e do ganho de cada uma.</p>
   <nav class="filters" aria-label="Filtrar por área" id="filters"></nav>
 
   <div class="catalog" id="grid">
@@ -70,7 +85,7 @@
       <h3>Guia única de impostos retidos</h3>
       <p><span class="label">Objetivo</span>Trocar os títulos de PIS, COFINS e CSLL retidos de cada nota por um único título por competência, espelhando o DARF.</p>
       <p><span class="label">Ganho</span>A conciliação do mês passa de dezenas de títulos para um, com vencimento e acúmulo de valores pequenos calculados sozinhos.</p>
-      <div class="stack"><span>Procedure</span><span>Botão de ação</span><span>Dashboard</span></div>
+      <div class="tags"><span>Procedure</span><span>Botão de ação</span><span>Dashboard</span></div>
     </article>
 
     <article class="card" data-area="Fiscal">
@@ -78,7 +93,7 @@
       <h3>Conciliação de NFS-e emitidas fora do ERP</h3>
       <p><span class="label">Objetivo</span>Gravar número, chave, status e ISS de cerca de 300 NFS-e emitidas em sistema externo nas notas geradas pelo faturamento de contratos.</p>
       <p><span class="label">Ganho</span>ERP igual ao que foi emitido, sem redigitação, por um script reexecutável com pré-checagem, backup e commit manual.</p>
-      <div class="stack"><span>PL/SQL</span><span>XML NFS-e</span></div>
+      <div class="tags"><span>PL/SQL</span><span>XML NFS-e</span></div>
     </article>
 
     <article class="card" data-area="Fiscal">
@@ -86,7 +101,7 @@
       <h3>DANFSE no padrão nacional</h3>
       <p><span class="label">Objetivo</span>Documento impresso da NFS-e no novo leiaute nacional, lido direto do XML autorizado, com IBS e CBS e endereço completo do tomador.</p>
       <p><span class="label">Ganho</span>Impressão fiel à nota autorizada, sem remontar os dados por consultas.</p>
-      <div class="stack"><span>JasperReports</span><span>XPath</span><span>PL/SQL</span></div>
+      <div class="tags"><span>JasperReports</span><span>XPath</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
@@ -94,7 +109,7 @@
       <h3>Posição financeira e aging na data base</h3>
       <p><span class="label">Objetivo</span>Mostrar os títulos em aberto em qualquer data escolhida, com receitas e despesas distribuídas em doze faixas de vencimento.</p>
       <p><span class="label">Ganho</span>O financeiro sabe o que estava em aberto num dia passado sem depender de combinações de filtros nas telas nativas.</p>
-      <div class="stack"><span>Dashboard</span><span>PL/SQL</span></div>
+      <div class="tags"><span>Dashboard</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
@@ -102,7 +117,7 @@
       <h3>Adiantamentos e reembolsos de colaboradores</h3>
       <p><span class="label">Objetivo</span>Saldo e extrato de cada colaborador na data base, mais indicadores de reembolsos aprovados que ainda não foram pagos.</p>
       <p><span class="label">Ganho</span>Saldo que bate com a tela do ERP e fim dos devedores falsos ao filtrar por centro de resultado.</p>
-      <div class="stack"><span>Dashboard</span><span>Cards</span><span>PL/SQL</span></div>
+      <div class="tags"><span>Dashboard</span><span>Cards</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
@@ -110,7 +125,7 @@
       <h3>Carteira de contratos e inadimplência</h3>
       <p><span class="label">Objetivo</span>Painel de receita recorrente, vencidos e contratos a vencer, e alerta de inadimplência contrato a contrato na liberação de faturamento.</p>
       <p><span class="label">Ganho</span>Um contrato atrasado deixa de travar os outros contratos do mesmo cliente, e a gestão vê a carteira inteira numa tela.</p>
-      <div class="stack"><span>Trigger</span><span>Procedure</span><span>Dashboard</span></div>
+      <div class="tags"><span>Trigger</span><span>Procedure</span><span>Dashboard</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
@@ -118,7 +133,7 @@
       <h3>Adiantamento de cliente ligado ao pedido</h3>
       <p><span class="label">Objetivo</span>Botão que gera o adiantamento e o título a receber a partir do pedido de venda.</p>
       <p><span class="label">Ganho</span>Fim dos boletos de adiantamento montados à mão, com a contrapartida contábil criada automaticamente.</p>
-      <div class="stack"><span>Botão de ação JS</span><span>Regra de negócio</span></div>
+      <div class="tags"><span>Botão de ação JS</span><span>Regra de negócio</span></div>
     </article>
 
     <article class="card" data-area="Financeiro">
@@ -126,7 +141,7 @@
       <h3>Auditoria da rotina de PCLD</h3>
       <p><span class="label">Objetivo</span>Explicar as diferenças entre os painéis financeiro e contábil da provisão para devedores duvidosos, com engenharia reversa da rotina.</p>
       <p><span class="label">Ganho</span>Cada divergência com causa identificada, correção proposta e o processo documentado para a contabilidade.</p>
-      <div class="stack"><span>Diagnóstico</span><span>PL/SQL</span></div>
+      <div class="tags"><span>Diagnóstico</span><span>PL/SQL</span></div>
     </article>
 
     <article class="card" data-area="Controles">
@@ -134,7 +149,7 @@
       <h3>Comissões com aprovação em duas etapas</h3>
       <p><span class="label">Objetivo</span>Pagamento de comissão aprovado pela Controladoria e depois pelo RH, com avisos e anexos de cálculo, e uma tela que liga cada pagamento às vendas que o compõem.</p>
       <p><span class="label">Ganho</span>Comissão rastreável até a nota e trava contra o mesmo item comissionado duas vezes.</p>
-      <div class="stack"><span>Regras de negócio</span><span>Trigger</span><span>HTML5</span></div>
+      <div class="tags"><span>Regras de negócio</span><span>Trigger</span><span>HTML5</span></div>
     </article>
 
     <article class="card" data-area="Controles">
@@ -142,7 +157,7 @@
       <h3>Liberação de ajustes de estoque</h3>
       <p><span class="label">Objetivo</span>Exigir liberação da Controladoria em todo ajuste de estoque, com aviso por e-mail.</p>
       <p><span class="label">Ganho</span>Nenhum ajuste confirmado sem conferência, e a cobertura muda por configuração, sem código.</p>
-      <div class="stack"><span>Regra de negócio</span><span>Fila de e-mail</span></div>
+      <div class="tags"><span>Regra de negócio</span><span>Fila de e-mail</span></div>
     </article>
 
     <article class="card" data-area="Controles">
@@ -150,7 +165,7 @@
       <h3>Avisos automáticos no ERP</h3>
       <p><span class="label">Objetivo</span>Avisar por e-mail ou na central de avisos sobre operações confirmadas e mudanças de cadastro que pedem revisão, como a troca de grupo econômico.</p>
       <p><span class="label">Ganho</span>Um aviso novo é só configuração, sem envio duplicado, e o aviso abre o registro direto no ERP.</p>
-      <div class="stack"><span>Trigger</span><span>Package</span><span>Deep link</span></div>
+      <div class="tags"><span>Trigger</span><span>Package</span><span>Deep link</span></div>
     </article>
 
     <article class="card" data-area="Custos">
@@ -158,7 +173,7 @@
       <h3>Correção do frete na rentabilidade</h3>
       <p><span class="label">Objetivo</span>Acabar com os fretes negativos na apuração de gastos variáveis, causados pela dedução do crédito de ICMS.</p>
       <p><span class="label">Ganho</span>Margem do período correta e base histórica recalculada por um job agendado.</p>
-      <div class="stack"><span>Function</span><span>View</span><span>DBMS_SCHEDULER</span></div>
+      <div class="tags"><span>Function</span><span>View</span><span>DBMS_SCHEDULER</span></div>
     </article>
 
     <article class="card" data-area="Custos">
@@ -166,17 +181,19 @@
       <h3>Posição de estoque por linha de produto</h3>
       <p><span class="label">Objetivo</span>Relatórios formatados por linha de produto, enviados por e-mail toda semana.</p>
       <p><span class="label">Ganho</span>As áreas de produto deixaram de receber planilhas exportadas de um painel.</p>
-      <div class="stack"><span>JasperReports</span><span>Envio agendado</span></div>
+      <div class="tags"><span>JasperReports</span><span>Envio agendado</span></div>
     </article>
 
   </div>
   <p class="empty" id="empty" hidden>Nenhuma entrega nesta área.</p>
+</div>
 </section>
 
-<section class="patterns" aria-labelledby="h-padroes">
-  <h2 class="sec" id="h-padroes">Como trabalho</h2>
-  <p class="sec-sub">Práticas que se repetem em todas as entregas.</p>
-  <ul class="plist">
+<section class="section soft" aria-labelledby="h-padroes">
+<div class="container">
+  <h2 id="h-padroes">Como trabalho</h2>
+  <p class="sub" style="margin-bottom:28px">Práticas que se repetem em todas as entregas.</p>
+  <ul class="principles">
     <li><strong>O sistema padrão fica intocado</strong><p>Todo objeto novo leva o prefixo AD_ e campos são criados pelo dicionário de dados. Atualizações do ERP não quebram nada.</p></li>
     <li><strong>Reprocessar é seguro</strong><p>Chaves de rastreio, pré-checagem, backup e script de rollback: rodar de novo nunca gera guia, nota ou comissão em dobro.</p></li>
     <li><strong>Conferido contra o que o usuário já confia</strong><p>Cada número novo é comparado com um relatório ou campo nativo que a equipe usa antes de ir para validação.</p></li>
@@ -184,14 +201,17 @@
     <li><strong>Erro que se explica</strong><p>Quando falta cadastro ou não há o que processar, a mensagem diz o motivo e onde corrigir.</p></li>
     <li><strong>Decisão de negócio é do cliente</strong><p>Pontos em aberto viram lista de definições com proposta técnica, e cada entrega sai com documentação para quem opera.</p></li>
   </ul>
+</div>
 </section>
 
-<footer>
-  <span>© 2026 Thúlio Leitão, consultor de tecnologia especializado em ERP Sankhya</span>
-  <a href="/">Voltar ao perfil</a>
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Soluções em Sistemas de Informação</span>
+    <span>Nomes de clientes omitidos, valores ilustrativos.</span>
+  </div>
 </footer>
-
-</div>
 
 <script>
 (function () {

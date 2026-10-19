@@ -3,345 +3,263 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thúlio Leitão | Consultoria Sankhya e banco de dados</title>
-<meta name="description" content="Thúlio Leitão, consultor de implantação do ERP Sankhya, desenvolvimento Oracle PL/SQL e SQL Server, integrações fiscais. Currículo e projetos.">
+<title>Thúlio Leitão | Consultor de Tecnologia e ERP Sankhya</title>
+<meta name="description" content="Thúlio Leitão, consultor de tecnologia especializado em ERP Sankhya, Oracle PL/SQL, SQL Server e integrações fiscais. Fundador da TL Tec.">
 <meta property="og:title" content="Thúlio Leitão">
-<meta property="og:description" content="Currículo e projetos: implantação Sankhya, Oracle PL/SQL, SQL Server e integrações fiscais.">
+<meta property="og:description" content="Consultor de tecnologia especializado em ERP Sankhya, Oracle, SQL Server e integrações fiscais.">
 <meta property="og:url" content="https://thulio.com.br/">
 <meta property="og:type" content="profile">
+<meta property="og:image" content="https://thulio.com.br/assets/thulio.jpg">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://thulio.com.br/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --desk:#E9ECEA;          /* mesa sob o formulário */
-  --paper:#FCFCFA;         /* papel */
-  --bar:#DDEBDF;           /* faixa verde do formulário contínuo */
-  --hole:#C8D2CA;          /* borda dos furos e picote */
-  --ink:#1C2733;           /* tinta azul-preta */
-  --muted:#5A6672;
-  --link:#245C46;          /* verde-tinta */
-  --rule:#D5DBD7;
-  --row:24px;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
-a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-
-/* ---------- Formulário contínuo (cabeçalho) ---------- */
-.sheet{
-  --edge:40px;
-  position:relative;max-width:980px;margin:40px auto 0;
-  padding:calc(var(--row)*2) calc(var(--edge) + 28px) calc(var(--row)*2);
-  background:
-    repeating-linear-gradient(to bottom,var(--bar) 0 calc(var(--row)*2),transparent calc(var(--row)*2) calc(var(--row)*4))
-      var(--edge) 0 / calc(100% - var(--edge)*2) 100% no-repeat,
-    var(--paper);
-  font-family:var(--mono);font-size:15px;line-height:var(--row);
-  box-shadow:0 1px 0 var(--hole);
-}
-/* furos de tração e picote nas margens */
-.sheet::before,.sheet::after{
-  content:"";position:absolute;top:0;bottom:0;width:var(--edge);
-  background:
-    radial-gradient(circle,var(--desk) 0 5px,var(--hole) 5.5px 6.5px,transparent 7px) center 6px / 100% var(--row) repeat-y;
-}
-.sheet::before{left:0;border-right:1px dashed var(--hole)}
-.sheet::after{right:0;border-left:1px dashed var(--hole)}
-.sheet .tear{position:absolute;left:0;right:0;bottom:-1px;height:1px;border-top:1px dashed var(--hole)}
-.report-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted)}
-.report-head p{margin:0}
-.name{
-  font-family:var(--sans);font-stretch:78%;font-weight:800;
-  font-size:clamp(48px,11vw,112px);line-height:1;letter-spacing:-.01em;
-  margin:calc(var(--row)*2) 0 calc(var(--row)*.5);
-}
-.role{margin:0 0 calc(var(--row)*2);font-size:16px}
-.fields{display:grid;grid-template-columns:max-content 1fr;column-gap:32px;margin:0}
-.fields dt{color:var(--muted)}
-.fields dd{margin:0}
-.end{margin:calc(var(--row)*2) 0 0;color:var(--muted)}
-@media (prefers-reduced-motion:no-preference) and (min-width:641px){
-  .printing{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;animation:print 1.6s steps(36,end) .3s both}
-  @keyframes print{from{max-width:0}to{max-width:37ch}}
-}
-
-/* ---------- Corpo ---------- */
-main{max-width:980px;margin:0 auto;padding:0 0 64px;background:var(--paper)}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-section{padding:56px 0 8px}
-h2{font-stretch:85%;font-weight:700;font-size:28px;line-height:1.2;margin:0 0 20px}
-h3{font-size:19px;font-weight:650;line-height:1.3;margin:0}
-.lede{font-size:20px;line-height:1.5;margin:0 0 16px}
-p{margin:0 0 14px}
-
-.project{padding:24px 0;border-top:1px solid var(--rule)}
-.project:last-child{border-bottom:1px solid var(--rule)}
-.project p{margin:8px 0 10px;max-width:64ch}
-.stack{font-size:14px;color:var(--muted);margin:0 0 10px}
-.project .client{font-size:15px;color:var(--muted);margin:2px 0 0}
-.intro{color:var(--muted);margin:0 0 16px}
-.more{margin:20px 0 0}
-.more a{font-weight:600}
-.links{display:flex;gap:20px;flex-wrap:wrap;font-weight:600;font-size:15px}
-
-.timeline{list-style:none;margin:0;padding:0}
-.timeline li{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--rule)}
-.timeline .when{color:var(--muted);font-size:15px;font-variant-numeric:tabular-nums;padding-top:2px}
-.timeline .org{color:var(--muted);margin:2px 0 6px}
-.timeline p{font-size:16px;margin:0}
-
-.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px}
-.skills h3{font-size:16px;margin-bottom:6px}
-.skills ul{margin:0;padding-left:18px;font-size:16px}
-
-footer{max-width:980px;margin:0 auto 40px;background:var(--paper);border-top:1px dashed var(--hole);padding:28px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
-
-@media (max-width:640px){
-  body{font-size:16px}
-  .sheet{--edge:22px;margin-top:0;padding-left:calc(var(--edge) + 14px);padding-right:calc(var(--edge) + 14px);font-size:13.5px}
-  .sheet::before,.sheet::after{background-size:100% var(--row);background-image:radial-gradient(circle,var(--desk) 0 3.5px,var(--hole) 4px 5px,transparent 5.5px)}
-  .fields{grid-template-columns:1fr;column-gap:0}
-  .fields dd{margin-bottom:var(--row)}
-  .timeline li{grid-template-columns:1fr;gap:4px}
-  .skills{grid-template-columns:1fr}
-  .wrap{padding:0 20px}
-  footer{margin-bottom:0}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
-<header class="sheet" aria-label="Apresentação">
-  <div class="report-head">
-    <p>thulio.com.br</p>
-    <p>Perfil profissional, folha 1</p>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/" aria-label="TL Tec, início"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#sankhya">Trabalhos</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li class="keep"><a class="cta" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </div>
-
-  <h1 class="name">Thúlio Leitão</h1>
-  <p class="role"><span class="printing">Consultor de TI e desenvolvedor ERP</span></p>
-
-  <dl class="fields">
-    <dt>Atuação</dt>      <dd>Consultor de Tecnologia na Hability Consult e fundador da TL TEC</dd>
-    <dt>Especialidade</dt><dd>Implantação do ERP Sankhya, Oracle PL/SQL e SQL Server</dd>
-    <dt>Integrações</dt>  <dd>Fiscais (NF-e, NFS-e) e APIs do Sankhya</dd>
-    <dt>Base</dt>         <dd>João Pessoa, Paraíba</dd>
-    <dt>Contato</dt>      <dd><a href="mailto:thulio@tl.tec.br">thulio@tl.tec.br</a></dd>
-  </dl>
-
-  <p class="end">*** fim do cabeçalho ***</p>
-  <span class="tear" aria-hidden="true"></span>
 </header>
 
 <main>
-  <div class="wrap">
 
-    <section id="sobre" aria-labelledby="h-sobre">
-      <h2 id="h-sobre">Sobre</h2>
-      <p class="lede">Há mais de quinze anos desenvolvo e implanto sistemas de gestão. Hoje meu trabalho é fazer o ERP Sankhya conversar com o que a empresa já tem: rotinas antigas em PL/SQL, novas telas de análise, integrações fiscais e APIs.</p>
-      <p>Trabalho perto das equipes de controladoria e financeiro, do diagnóstico ao script que corrige a base. Fui líder técnico na própria Sankhya e, antes disso, passei seis anos como analista de sistemas na indústria, ligando processos de produção, fiscal e financeiro.</p>
-    </section>
-
-    <section id="sankhya" aria-labelledby="h-sankhya">
-      <h2 id="h-sankhya">Trabalhos no ERP Sankhya</h2>
-      <p class="intro">Customizações entregues para clientes de terceirização, serviços profissionais, importação e distribuição. O código pertence a eles, por isso aqui vai só o que cada projeto resolve.</p>
-
-      <article class="project">
-        <h3>Faturamento de contratos, da proposta à nota</h3>
-        <p class="client">Terceirização de mão de obra</p>
-        <p>O preço de cada cargo é calculado na proposta, segue para o contrato, é apurado todo mês a partir da folha e do ponto e vira pedidos e NFS-e. O faturamento deixou de passar por planilhas e ganhou um painel que mostra de onde vem cada valor.</p>
-        <p class="stack">SQL Server, JavaScript (Rhino), HTML5</p>
-        <div class="links"><a href="/sankhya/faturamento-contratos/">Ver o projeto</a></div>
-      </article>
-
-      <article class="project">
-        <h3>DRE gerencial dentro do ERP</h3>
-        <p class="client">Serviços profissionais e comércio</p>
-        <p>Demonstração de resultado com comparativo entre anos, projeção, regime de caixa ou competência e abertura de qualquer linha até o título de origem, conciliada com o fiscal e a contabilidade.</p>
-        <p class="stack">Oracle PL/SQL, dashboards</p>
-        <div class="links"><a href="/sankhya/dre-gerencial/">Ver o projeto</a></div>
-      </article>
-
-      <article class="project">
-        <h3>Custo das notas complementares de importação</h3>
-        <p class="client">Importação e distribuição</p>
-        <p>Uma nota-espelho gerencial leva os tributos da nota complementar para o custo médio, sem mudar a exigência contábil de emiti-la com quantidade zero. Validado ponta a ponta e em produção.</p>
-        <p class="stack">Oracle PL/SQL, regras de negócio, fórmulas de custo</p>
-      </article>
-
-      <p class="more"><a href="/sankhya/">Ver as 16 entregas</a>, incluindo rotinas fiscais de NFS-e, painéis financeiros e controles de aprovação.</p>
-    </section>
-
-    <section id="projetos" aria-labelledby="h-projetos">
-      <h2 id="h-projetos">Projetos no GitHub</h2>
-
-      <article class="project">
-        <h3>Boilerplate de integração Sankhya</h3>
-        <p>Base pronta para integrar sistemas ao ERP Sankhya pelo API Gateway com OAuth 2.0. Renova o token sozinha, respeita os limites do Gateway, repete falhas transitórias sem duplicar lançamentos e traduz os erros do Sankhya em causas prováveis. Feita para ser clonada a cada novo cliente.</p>
-        <p class="stack">Node 22, TypeScript, Docker, GitHub Actions</p>
-        <div class="links">
-          <a href="https://github.com/thuliolf/tltecsankhyairp">Ver o código</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Protocolo 30 Dias</h3>
-        <p>App instalável no celular para acompanhar um protocolo de 30 dias com cinco hábitos metabólicos: checklist diário, mapa do ciclo, registro de cintura e peso com gráfico e backup em arquivo. Funciona sem internet e guarda tudo só no aparelho.</p>
-        <p class="stack">HTML, CSS e JavaScript, PWA com service worker</p>
-        <div class="links">
-          <a href="/protocolo-30-dias/">Abrir o app</a>
-          <a href="https://github.com/thuliolf/protocolo-30-dias">Ver o código</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Calculadora de dosagem</h3>
-        <p>Converte doses entre mg, UI e ml a partir da concentração do frasco: digite o valor em qualquer campo e os outros são calculados, considerando seringa de 100 UI por ml. Pensada para uso rápido no celular.</p>
-        <p class="stack">HTML, CSS e JavaScript</p>
-        <div class="links">
-          <a href="/calcdosagem/">Abrir a calculadora</a>
-          <a href="https://github.com/thuliolf/calcdosagem">Ver o código</a>
-        </div>
-      </article>
-    </section>
-
-    <section id="experiencia" aria-labelledby="h-exp">
-      <h2 id="h-exp">Experiência</h2>
-      <ol class="timeline">
-        <li>
-          <span class="when">Março de 2025 até hoje</span>
-          <div>
-            <h3>Consultor de Tecnologia, BPO</h3>
-            <p class="org">Hability Consult</p>
-            <p>Implantação e sustentação do ERP Sankhya para clientes da Hability: customizações, procedures em Oracle e SQL Server, correção e reprocessamento de dados, automação de faturamento e relatórios fiscais de NFS-e, junto às equipes de controladoria e financeiro.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2017 até hoje</span>
-          <div>
-            <h3>Fundador e consultor</h3>
-            <p class="org">TL TEC, João Pessoa</p>
-            <p>Consultoria, projetos de implantação e desenvolvimento de sistemas. Implantações e customizações do ERP Sankhya, procedures em Oracle e SQL Server, relatórios e integrações fiscais de NF-e e NFS-e para clientes de vários segmentos.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2023 a 2024</span>
-          <div>
-            <h3>Tech Lead</h3>
-            <p class="org">Sankhya Gestão de Negócios, João Pessoa</p>
-            <p>Liderança técnica de equipe, com foco em desenvolvimento de pessoas, performance de sistemas e melhoria de processos internos.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2015 a 2022</span>
-          <div>
-            <h3>Analista de sistemas</h3>
-            <p class="org">Laticínio Belo Vale, João Pessoa e Sousa</p>
-            <p>Análise e desenvolvimento de soluções de TI para a indústria, integrando processos e o ERP da empresa.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2012 a 2015</span>
-          <div>
-            <h3>Analista de sistemas</h3>
-            <p class="org">TrueSoft Tecnologia, João Pessoa</p>
-            <p>Desenvolvimento de software.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2010 a 2012</span>
-          <div>
-            <h3>Analista de sistemas</h3>
-            <p class="org">Acade Sistemas</p>
-            <p>Desenvolvimento de software.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section id="formacao" aria-labelledby="h-form">
-      <h2 id="h-form">Formação</h2>
-      <ol class="timeline">
-        <li>
-          <span class="when">2015 a 2017</span>
-          <div>
-            <h3>Pós-graduação em Desenvolvimento de Aplicações para Web</h3>
-            <p class="org">Centro Universitário de João Pessoa (Unipê)</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2008 a 2011</span>
-          <div>
-            <h3>Graduação em Análise e Desenvolvimento de Sistemas</h3>
-            <p class="org">Faculdade Idez</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section id="competencias" aria-labelledby="h-comp">
-      <h2 id="h-comp">Competências</h2>
-      <div class="skills">
-        <div>
-          <h3>ERP Sankhya</h3>
-          <ul>
-            <li>Implantação e customização</li>
-            <li>Telas e eventos em JavaScript (Rhino)</li>
-            <li>Relatórios em JasperReports / iReport</li>
-            <li>API Gateway com OAuth 2.0</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Banco de dados</h3>
-          <ul>
-            <li>Oracle PL/SQL: procedures, triggers, views</li>
-            <li>SQL Server: T-SQL e stored procedures</li>
-            <li>Scripts de diagnóstico e reprocessamento</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Fiscal</h3>
-          <ul>
-            <li>NF-e e NFS-e no ERP</li>
-            <li>Importação e saneamento de dados fiscais</li>
-            <li>Automação de faturamento</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Desenvolvimento</h3>
-          <ul>
-            <li>JavaScript, TypeScript e Node</li>
-            <li>Java</li>
-            <li>Git, Docker e GitHub Actions</li>
-          </ul>
-        </div>
+<section class="hero" aria-labelledby="h-nome">
+  <div class="container">
+    <div>
+      <span class="pill">Consultor de Tecnologia e ERP Sankhya</span>
+      <h1 id="h-nome">Thúlio Leitão</h1>
+      <p class="role">Fundador da TL Tec e consultor na Hability Consult</p>
+      <p class="lede">Implanto e customizo o ERP Sankhya para que ele converse com o que a empresa já tem: rotinas em Oracle e SQL Server, painéis de gestão, integrações fiscais e APIs.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:thulio@tl.tec.br">Fale comigo</a>
+        <a class="btn btn-ghost" href="#sankhya">Ver trabalhos</a>
       </div>
-    </section>
-
-    <section id="contato" aria-labelledby="h-contato">
-      <h2 id="h-contato">Contato</h2>
-      <p>Para implantação, customização ou integração com o Sankhya, escreva para <a href="mailto:thulio@tl.tec.br">thulio@tl.tec.br</a>.</p>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/thuliolf">LinkedIn</a>
-        <a href="https://github.com/thuliolf">GitHub</a>
+      <div class="quick">
+        <div><b>15+</b><span>anos com sistemas de gestão</span></div>
+        <div><b>16</b><span>entregas no Sankhya</span></div>
+        <div><b>Tech Lead</b><span>na Sankhya, 2023 a 2024</span></div>
       </div>
-    </section>
-
+    </div>
+    <div class="portrait">
+      <img src="/assets/thulio.jpg" width="640" height="640" alt="Thúlio Leitão de terno azul, sentado em um escritório">
+    </div>
   </div>
+</section>
+
+<section class="section soft" id="sobre" aria-labelledby="h-sobre">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Sobre</p>
+      <h2 id="h-sobre">Do diagnóstico ao script que corrige a base</h2>
+    </div>
+    <div class="text">
+      <p class="big">Há mais de quinze anos desenvolvo e implanto sistemas de gestão. Hoje meu trabalho é fazer o ERP Sankhya resolver o processo real da empresa, sem planilhas paralelas.</p>
+      <p>Trabalho perto das equipes de controladoria, financeiro e faturamento. Fui líder técnico na própria Sankhya e, antes disso, passei seis anos como analista de sistemas na indústria, ligando produção, fiscal e financeiro. Pela TL Tec atendo empresas de vários segmentos com implantação, customização e integrações.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sankhya" aria-labelledby="h-sankhya">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Trabalhos no ERP Sankhya</p>
+      <h2 id="h-sankhya">Projetos que tiraram processos da planilha</h2>
+      <p class="sub">Entregas para clientes de terceirização, serviços profissionais, importação e distribuição. O código pertence a eles, então aqui vai o que cada projeto resolve.</p>
+    </div>
+    <div class="cards">
+      <article class="card accent">
+        <span class="seg">Terceirização de mão de obra</span>
+        <h3>Faturamento de contratos, da proposta à nota</h3>
+        <p>O preço de cada cargo nasce na proposta, segue para o contrato, é apurado todo mês pela folha e pelo ponto e vira pedidos e NFS-e.</p>
+        <p><span class="label">Ganho</span>Faturamento mensal sem planilha, auditado num painel que mostra de onde vem cada valor.</p>
+        <a class="go" href="/sankhya/faturamento-contratos/">Ver o projeto</a>
+      </article>
+      <article class="card accent">
+        <span class="seg">Serviços profissionais e comércio</span>
+        <h3>DRE gerencial dentro do ERP</h3>
+        <p>Comparativo entre anos, projeção, regime de caixa ou competência e abertura de qualquer linha até o título de origem.</p>
+        <p><span class="label">Ganho</span>Resultado montado no próprio ERP, conciliado com o fiscal e a contabilidade.</p>
+        <a class="go" href="/sankhya/dre-gerencial/">Ver o projeto</a>
+      </article>
+      <article class="card accent">
+        <span class="seg">Importação e distribuição</span>
+        <h3>Custo das notas complementares de importação</h3>
+        <p>Uma nota-espelho gerencial leva os tributos da nota complementar para o custo médio, sem mudar a exigência contábil de quantidade zero.</p>
+        <p><span class="label">Ganho</span>Custo do produto correto, validado ponta a ponta e em produção.</p>
+      </article>
+    </div>
+    <div class="more">
+      <a class="btn btn-ghost" href="/sankhya/">Ver as 16 entregas</a>
+      <span>Rotinas fiscais de NFS-e, painéis financeiros e controles de aprovação.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="projetos" aria-labelledby="h-projetos">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Projetos no GitHub</p>
+      <h2 id="h-projetos">Código aberto</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Boilerplate de integração Sankhya</h3>
+        <p>Base para integrar sistemas ao Sankhya pelo API Gateway com OAuth 2.0: renova o token sozinha, respeita os limites do Gateway, repete falhas sem duplicar lançamentos e traduz os erros em causas prováveis.</p>
+        <div class="tags"><span>Node 22</span><span>TypeScript</span><span>Docker</span></div>
+        <div class="links"><a href="https://github.com/thuliolf/tltecsankhyairp">Ver o código</a></div>
+      </article>
+      <article class="card">
+        <h3>Protocolo 30 Dias</h3>
+        <p>App instalável no celular para acompanhar cinco hábitos metabólicos por 30 dias, com mapa do ciclo, medidas com gráfico e backup. Funciona sem internet e guarda tudo no aparelho.</p>
+        <div class="tags"><span>PWA</span><span>JavaScript</span><span>Offline</span></div>
+        <div class="links"><a href="/protocolo-30-dias/">Abrir o app</a><a href="https://github.com/thuliolf/protocolo-30-dias">Ver o código</a></div>
+      </article>
+      <article class="card">
+        <h3>Calculadora de dosagem</h3>
+        <p>Converte doses entre mg, UI e ml a partir da concentração do frasco: digite em qualquer campo e os outros são calculados, considerando seringa de 100 UI por ml.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="links"><a href="/calcdosagem/">Abrir a calculadora</a><a href="https://github.com/thuliolf/calcdosagem">Ver o código</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experiencia" aria-labelledby="h-exp">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Experiência</p>
+      <h2 id="h-exp">Trajetória</h2>
+      <p class="sub">De analista de sistemas na indústria a líder técnico na Sankhya e consultor.</p>
+    </div>
+    <ol class="timeline">
+      <li>
+        <p class="when">Março de 2025 até hoje</p>
+        <h3>Consultor de Tecnologia, BPO</h3>
+        <p class="org">Hability Consult</p>
+        <p>Implantação e sustentação do ERP Sankhya para clientes da Hability: customizações, procedures em Oracle e SQL Server, automação de faturamento e rotinas fiscais de NFS-e, junto às equipes de controladoria e financeiro.</p>
+      </li>
+      <li>
+        <p class="when">2017 até hoje</p>
+        <h3>Fundador e consultor</h3>
+        <p class="org">TL Tec, João Pessoa</p>
+        <p>Consultoria, projetos de implantação e desenvolvimento de sistemas de informação para clientes de vários segmentos.</p>
+      </li>
+      <li>
+        <p class="when">2023 a 2024</p>
+        <h3>Tech Lead</h3>
+        <p class="org">Sankhya Gestão de Negócios, João Pessoa</p>
+        <p>Liderança técnica de equipe, com foco em desenvolvimento de pessoas, performance de sistemas e melhoria de processos internos.</p>
+      </li>
+      <li>
+        <p class="when">2015 a 2022</p>
+        <h3>Analista de sistemas</h3>
+        <p class="org">Laticínio Belo Vale, João Pessoa e Sousa</p>
+        <p>Soluções de TI para a indústria, integrando processos e o ERP da empresa.</p>
+      </li>
+      <li>
+        <p class="when">2012 a 2015</p>
+        <h3>Analista de sistemas</h3>
+        <p class="org">TrueSoft Tecnologia, João Pessoa</p>
+      </li>
+      <li>
+        <p class="when">2010 a 2012</p>
+        <h3>Analista de sistemas</h3>
+        <p class="org">Acade Sistemas</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section soft" id="formacao" aria-labelledby="h-form">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Formação e competências</p>
+      <h2 id="h-form">Base técnica</h2>
+      <ol class="timeline" style="margin-top:32px">
+        <li>
+          <p class="when">2015 a 2017</p>
+          <h3>Pós-graduação em Desenvolvimento de Aplicações para Web</h3>
+          <p class="org">Centro Universitário de João Pessoa (Unipê)</p>
+        </li>
+        <li>
+          <p class="when">2008 a 2011</p>
+          <h3>Graduação em Análise e Desenvolvimento de Sistemas</h3>
+          <p class="org">Faculdade Idez</p>
+        </li>
+      </ol>
+    </div>
+    <div class="skills">
+      <div class="card">
+        <h3>ERP Sankhya</h3>
+        <ul>
+          <li>Implantação e customização</li>
+          <li>Telas e eventos em JavaScript (Rhino)</li>
+          <li>Dashboards e relatórios JasperReports</li>
+          <li>API Gateway com OAuth 2.0</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Banco de dados</h3>
+        <ul>
+          <li>Oracle PL/SQL</li>
+          <li>SQL Server e T-SQL</li>
+          <li>Diagnóstico e reprocessamento</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Fiscal e financeiro</h3>
+        <ul>
+          <li>NF-e e NFS-e no ERP</li>
+          <li>Automação de faturamento</li>
+          <li>DRE e painéis gerenciais</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Desenvolvimento</h3>
+        <ul>
+          <li>JavaScript, TypeScript e Node</li>
+          <li>Java</li>
+          <li>Git, Docker e GitHub Actions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato" aria-labelledby="h-contato">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--cyan)">Contato</p>
+    <h2 id="h-contato">Vamos conversar sobre o seu Sankhya</h2>
+    <p class="sub" style="margin:12px 0 24px">Implantação, customização, integrações ou um processo que ainda depende de planilha.</p>
+    <a class="mail" href="mailto:thulio@tl.tec.br">thulio@tl.tec.br</a>
+    <div class="actions">
+      <a class="btn btn-light" href="https://www.linkedin.com/in/thuliolf">LinkedIn</a>
+      <a class="btn btn-light" href="https://github.com/thuliolf">GitHub</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer>
-  <div class="wrap">
+<footer class="footer">
+  <div class="container">
+    <span class="brand"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></span>
+    <span>Soluções em Sistemas de Informação</span>
     <span>© 2026 Thúlio Leitão</span>
-    <span>Código do site no <a href="https://github.com/thuliolf/thuliolf.github.io">GitHub</a></span>
   </div>
 </footer>
 

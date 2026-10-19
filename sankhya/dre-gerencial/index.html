@@ -9,28 +9,41 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/sankhya/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="page">
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/" aria-label="TL Tec, início"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/sankhya/">Trabalhos</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#experiencia">Experiência</a></li>
+        <li class="keep"><a class="cta" href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
 
-<div class="top">
-  <a href="/">thulio.com.br</a>
-  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
-</div>
-
-<header class="intro">
-  <p class="kicker">Controladoria, Oracle PL/SQL</p>
+<section class="page-head">
+<div class="container">
+  <p class="crumb"><a href="/">Início</a> / <a href="/sankhya/">Trabalhos Sankhya</a></p>
+  <p class="eyebrow">Controladoria, Oracle PL/SQL</p>
   <h1>DRE gerencial dentro do ERP</h1>
   <p class="lede">A controladoria montava o resultado fora do sistema, porque o relatório padrão não comparava anos, não projetava e não abria uma conta até os lançamentos. Construí a DRE como painel do próprio Sankhya, em duas versões para clientes diferentes: uma empresa de serviços profissionais, com comparativo e projeção, e uma empresa que vende mercadorias, com CMV e escolha entre caixa e competência.</p>
   <div class="facts">
-    <span><b>2</b> implantações</span>
-    <span>CTE recursiva, funções analíticas, dashboards</span>
+    <div><b>2</b><span>implantações</span></div>
+    <div><b>Oracle PL/SQL</b><span>CTE recursiva, funções analíticas, dashboards</span></div>
   </div>
-</header>
+</div>
+</section>
 
-<section class="block" aria-label="Exemplo da DRE">
+<section class="section" aria-label="Exemplo da DRE">
+<div class="container">
   <div class="ledger">
     <table>
       <thead><tr><th>Código</th><th>Conta</th><th class="num">Valor</th><th class="num">Reflexo</th></tr></thead>
@@ -46,10 +59,12 @@
     </table>
   </div>
   <p class="cap">Valores e plano de contas ilustrativos. Cada linha abre um segundo nível com os títulos e notas que a compõem.</p>
+</div>
 </section>
 
-<section class="block" aria-labelledby="h-mod">
-  <h2 class="sec" id="h-mod">O que a DRE faz</h2>
+<section class="section soft" aria-labelledby="h-mod">
+<div class="container">
+  <h2 id="h-mod">O que a DRE faz</h2>
   <div>
 
     <article class="module">
@@ -105,24 +120,29 @@
     </article>
 
   </div>
+</div>
 </section>
 
-<section class="block" aria-labelledby="h-res" style="padding-bottom:48px">
-  <h2 class="sec" id="h-res">Resultado</h2>
-  <p class="sec-sub">O que o painel garante hoje.</p>
+<section class="section" aria-labelledby="h-res">
+<div class="container">
+  <h2 id="h-res">Resultado</h2>
+  <p class="sub" style="margin-bottom:28px">O que o painel garante hoje.</p>
   <div class="outcomes">
     <div><b>Totais que fecham</b><p>A soma do detalhe é igual à linha do painel, inclusive no CMV.</p></div>
     <div><b>Sem dupla contagem</b><p>Cada lançamento, rateado ou não, cai em uma única conta.</p></div>
     <div><b>Regime coerente</b><p>Caixa e competência mudam as despesas e preservam o resultado bruto.</p></div>
     <div><b>Fora da planilha</b><p>Comparativo, projeção e análise mensal saem do próprio ERP.</p></div>
   </div>
+</div>
 </section>
 
-<footer>
-  <span>Dados de clientes omitidos, valores ilustrativos.</span>
-  <a href="/sankhya/">Todos os trabalhos Sankhya</a>
+</main>
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="/"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M10 20H46M28 20V38H54" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/><g fill="currentColor"><circle cx="10" cy="20" r="6.5"/><circle cx="46" cy="20" r="6.5"/><circle cx="28" cy="38" r="6.5"/><circle cx="54" cy="38" r="6.5"/></g><circle cx="30" cy="6" r="5" fill="#00E7FF"/><circle cx="44" cy="50" r="5" fill="#00E7FF"/></svg><span class="wm"><b>TL</b>tech</span></a>
+    <span>Soluções em Sistemas de Informação</span>
+    <span>Nomes de clientes omitidos, valores ilustrativos.</span>
+  </div>
 </footer>
-
-</div>
 </body>
 </html>
