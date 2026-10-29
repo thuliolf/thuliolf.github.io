@@ -489,9 +489,9 @@
         </span>
         <span class="badge-pill status-green">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Versão 1.0
+          Versão 1.1
         </span>
-        <span class="badge-pill">26/10/2026</span>
+        <span class="badge-pill">Atualizado em 29/10/2026</span>
         <button class="btn-print" onclick="window.print()">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Imprimir / PDF
@@ -750,7 +750,7 @@
           <label class="check-item"><input type="checkbox"><span>Todos os itens estão ligados ao produto certo, com a unidade certa.</span></label>
           <label class="check-item"><input type="checkbox"><span>Quantidades batem com o XML (atenção a unidade alternativa: caixa x unidade).</span></label>
           <label class="check-item"><input type="checkbox"><span>Todos os itens ligados a pedido de compra e saldo do pedido conferido.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Lote, fabricação e validade preenchidos nos produtos com rastro de lote.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Lote, fabricação e validade preenchidos nos produtos com rastro de lote, e número de série nos produtos que controlam série.</span></label>
           <label class="check-item"><input type="checkbox"><span>Impostos (ICMS, IPI, ST, PIS/COFINS) conferidos com o DANFE.</span></label>
           <label class="check-item"><input type="checkbox"><span>Parcelas e vencimentos do financeiro conferidos com a fatura/boleto.</span></label>
           <label class="check-item"><input type="checkbox"><span>Manifestação (Confirmo a operação) feita antes de confirmar, quando exigida.</span></label>
@@ -830,6 +830,10 @@
           <div class="callout warn">
             <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             <div><strong>Produto ainda não cadastrado?</strong> Use o botão <strong>Impressão do Grid</strong> desta aba para gerar a lista de itens sem equivalência e encaminhar ao cadastro. Não ligue a um produto "parecido" só para destravar.</div>
+          </div>
+          <div class="callout info">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div><strong>Produto com número de série?</strong> O XML não traz a série em campo que o portal leia, então a coluna <strong>Controle</strong> chega vazia e o item não liga ao pedido. Digite a série igual à do pedido nessa coluna (<a href="#caso-serie" onclick="goTab('tab-casos'); setTimeout(function(){ document.getElementById('caso-serie').scrollIntoView({ behavior: 'smooth' }); }, 50); return false;" class="footer-link">Caso 5</a>).</div>
           </div>
         </div>
 
@@ -1119,6 +1123,58 @@
         </div>
         <p class="lead">Se a nota foi digitada à mão na Central de Compras e depois o XML aparece no portal (via MD-e), <strong>não processe</strong>. Use <strong>Cancelar</strong> na linha do portal para ela sair da fila de pendentes. Processar criaria uma segunda nota, com estoque e financeiro em dobro.</p>
       </div>
+
+      <!-- Caso 5 -->
+      <div class="card-box" id="caso-serie">
+        <div class="case-head">
+          <h2>Caso 5 &bull; Itens com número de série não ligam ao pedido</h2>
+          <span class="pill-flag def">Analisado em 28/10/2026</span>
+        </div>
+        <p class="lead">A nota tem itens que controlam <strong>número de série</strong> (controle adicional) e itens que não controlam. Na aba <strong>Pedidos</strong>, só os itens <strong>sem</strong> controle ligam ao pedido; os itens com série ficam sem pedido, embora a DANFE mostre os números de série.</p>
+        <div class="diff-container">
+          <div class="diff-box no">
+            <span class="diff-label">Por que acontece</span>
+            O portal liga nota e pedido por <strong>produto + controle</strong>. No pedido, o item tem a série preenchida; no XML, a série vem só no texto livre de informações adicionais do item (<code>infAdProd</code>), que é o que a DANFE imprime. O portal <strong>não lê esse texto</strong>: ele só reconhece controle em tag estruturada, e a NF-e só tem tag própria para <strong>lote</strong> (<code>rastro</code>), não para série de produto comum. O item chega com controle em branco e não encontra o item do pedido.
+          </div>
+          <div class="diff-box yes">
+            <span class="diff-label">Faça assim</span>
+            <ol>
+              <li>Duplo clique na linha &rarr; aba <strong>Produtos por Parceiro</strong>.</li>
+              <li>Em cada item com série, duplo clique na coluna <strong>Controle</strong> e digite o número de série <strong>exatamente como está no pedido</strong>.</li>
+              <li>Clique em <strong>Validar Importação</strong> e confira na aba <strong>Pedidos</strong> se todos os itens ficaram ligados.</li>
+              <li>Siga o fluxo normal: Abrir Documento &rarr; MD-e &rarr; Confirmo a operação &rarr; confirmar a nota.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="two-col" style="margin-top: 16px;">
+          <div class="col-box"><span class="t">Se não der para ligar no portal</span>
+            Quando uma linha do XML traz <strong>várias unidades com séries diferentes</strong> e o pedido tem uma linha por série, o portal não consegue casar uma linha com várias. Nesse caso:
+            <ol style="margin-top: 8px;">
+              <li>Fature o <strong>pedido de compra</strong> direto na Central de Compras, informando <strong>Nro Nota</strong>, <strong>Série da nota</strong> e <strong>Chave NF-e</strong> exatamente como no XML. O número de série de cada item vem do pedido.</li>
+              <li>No portal, na linha do XML: <strong>MD-e &rarr; Confirmo a operação</strong>, antes de confirmar a nota.</li>
+              <li>Confirme a nota na Central de Compras.</li>
+            </ol>
+          </div>
+          <div class="col-box teal"><span class="t">E a linha que ficou no portal?</span>
+            Ela continua <span class="tag-status s-pend">Pendente</span>, porque a nota não nasceu do portal.
+            <ul style="margin-top: 8px;">
+              <li><strong>Não processe:</strong> geraria nota em dobro (a chave já usada deve barrar, mas não conte com isso).</li>
+              <li><strong>Não exclua:</strong> é a linha que guarda o XML do fornecedor.</li>
+              <li>Acione a Hability para vincular a linha à nota já confirmada e tirá-la da fila de pendentes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div><strong>Não tire o controle para "fazer passar".</strong> Remover o controle do produto ou apagar a série do pedido destrava a ligação, mas o estoque entra sem série e depois exige ajuste de estoque, com liberação da Controladoria.</div>
+        </div>
+        <div class="callout info">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div><strong>Configuração em estudo:</strong> em Outras Opções &rarr; <em>Preferências para importação de NF-e</em>, o campo <strong>Validar controle adicional = Não validar</strong> liga o item ao pedido sem exigir o controle. Ela vale para todas as importações e ainda está em teste para confirmar se a nota herda a série do pedido. Não altere sem alinhamento com a Hability.</div>
+        </div>
+      </div>
     </section>
 
     <!-- =====================================================================
@@ -1130,7 +1186,7 @@
           <div class="icon-circle red"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h2>Apareceu uma mensagem? Procure aqui</h2>
         </div>
-        <input type="text" class="search-box" id="err-search" placeholder="Digite parte da mensagem, código ou palavra (ex.: 655, pedido, lote, sem xml)" oninput="filterErrors(this.value)">
+        <input type="text" class="search-box" id="err-search" placeholder="Digite parte da mensagem, código ou palavra (ex.: 655, pedido, lote, série, sem xml)" oninput="filterErrors(this.value)">
         <div class="table-wrap">
           <table class="data-table" id="err-table">
             <thead><tr><th style="width: 32%;">Mensagem / sintoma</th><th style="width: 30%;">Causa</th><th>Solução</th></tr></thead>
@@ -1149,6 +1205,7 @@
               <tr><td><span class="msg">XML mal formado ou inválido!</span></td><td>Arquivo corrompido ou não é XML de NF-e/CT-e.</td><td>Peça o XML de novo ao fornecedor ou baixe pelo MD-e. O portal só aceita .xml ou .zip.</td></tr>
               <tr><td>Mensagem sobre não encontrar empresa com CNPJ e IE iguais aos do XML</td><td>CNPJ/IE do destinatário não bate com o cadastro da empresa.</td><td>Confira se a nota é mesmo para esta empresa/filial. Se for, acione a Hability para revisar o cadastro.</td></tr>
               <tr><td><span class="msg">Devolução sem Nota de Venda, efetuar o Ref. Manual.</span></td><td>A devolução não achou a nota de venda de origem.</td><td>Neste padrão, devolução de cliente vai pelo Portal de Vendas &rarr; Devolv./Estor. (Caso 1).</td></tr>
+              <tr><td>Aba Pedidos liga só os itens sem controle; itens com <strong>número de série</strong> ficam sem pedido (a série aparece na DANFE)</td><td>A série vem só no texto de informações adicionais do item, que o portal não lê. O item chega com Controle vazio e não casa com o item do pedido.</td><td>Produtos por Parceiro: digite a série na coluna Controle, igual à do pedido, e valide. Não dando, fature o pedido com a chave da NF-e. (Caso 5)</td></tr>
               <tr><td>Unidade do Lote obrigatória (produto com controle por número de lote e rastro)</td><td>Produto com rastro de lote e campo Unidade do Lote vazio.</td><td>Na aba Produtos por Parceiro, informe a Unidade do Lote do item.</td></tr>
               <tr><td>CT-e: <strong>Notas não encontradas</strong> / <strong>Nota(s) faltante(s)</strong></td><td>As NF-e transportadas ainda não estão no sistema.</td><td>Importe as NF-e primeiro; depois valide o CT-e.</td></tr>
               <tr><td><span class="msg">Preferências CT-e: Data de vencimento não informado</span></td><td>O CT-e não traz vencimento.</td><td>Preencha o campo Dt. Vencimento e clique em Validar Importação.</td></tr>
@@ -1181,7 +1238,7 @@
     </div>
     <p>Manual operacional &bull; Consultoria Sankhya ERP, BPO e Soluções Digitais</p>
     <p style="margin-top: 6px; font-size: 12px; color: var(--slate-500);">
-      <a href="https://www.habilityconsult.com.br" target="_blank" rel="noopener noreferrer" class="footer-link">www.habilityconsult.com.br</a> &bull; Autor: Thulio Leitão &bull; 26/10/2026
+      <a href="https://www.habilityconsult.com.br" target="_blank" rel="noopener noreferrer" class="footer-link">www.habilityconsult.com.br</a> &bull; Autor: Thulio Leitão &bull; v1.1 &bull; 29/10/2026
     </p>
   </footer>
 
